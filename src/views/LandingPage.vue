@@ -15,11 +15,12 @@ onMounted(() => {
     stagger: 0.1
   });
 
+  //61px height of navigation
   gsap.to('h2 span', {
     scrollTrigger: {
       trigger: 'h2 span',
       start: 'top 61px',
-      end: 'bottom top',
+      end: 'bottom 61px',
       scrub: true
     },
     immediateRender: false,
