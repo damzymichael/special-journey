@@ -18,7 +18,7 @@ onMounted(() => {
   gsap.to('h2 span', {
     scrollTrigger: {
       trigger: 'h2 span',
-      start: 'top top',
+      start: 'top 61px',
       end: 'bottom top',
       scrub: true
     },
