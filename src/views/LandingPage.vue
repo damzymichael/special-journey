@@ -20,7 +20,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: 'h2 span',
       start: 'top 61px',
-      end: 'bottom 61px',
+      end: 'bottom top',
       scrub: true
     },
     immediateRender: false,
