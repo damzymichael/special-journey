@@ -35,8 +35,8 @@ onMounted(() => {
   <main>
     <!-- Hero section  -->
     <section class="hero h-screen bg-[#313133] flex items-end p-5 sm:p-10 pb-0">
-      <div class="mb-[10vw]">
-        <h2 class="uppercase mb-3 text-3xl sm:text-4xl">
+      <div class="mb-[25vw]">
+        <h2 class="uppercase mb-3 text-3xl sm:text-4xl overflow-x-hidden">
           <!-- <span v-for="text in message" class="block relative">{{ text }}</span> -->
           <span class="block relative">Customize your </span>
           <span class="block relative">merch, the way you</span>
