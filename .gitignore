@@ -33,4 +33,3 @@ test-results/
 playwright-report/
 
 note.txt
-env.d.ts
