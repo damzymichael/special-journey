@@ -11,8 +11,6 @@ import CloseIcon from '@/components/svg/CloseIcon.vue';
 const showMenu = ref(false);
 
 const links: {text: string; link: string}[] = [];
-
-function animateChildren() {}
 </script>
 
 <template>
@@ -57,7 +55,7 @@ function animateChildren() {}
       class="md:hidden fixed bg-white w-screen h-screen z-40 text-black p-4 pt-6"
       v-if="showMenu"
     >
-      <header class="flex justify-between mb-10">
+      <header class="flex items-center justify-between mb-10">
         <img src="@/assets/logo_black.png" alt="Brand Logo" />
         <Button :border="false" @click="showMenu = false">
           <CloseIcon :width="25" :height="25" />
@@ -130,7 +128,7 @@ li:nth-child(5) {
   clip-path: circle(0% at 100% 0);
 }
 
-/*Style active link */
+/* Style active link */
 /* nav a.router-link-exact-active {
 } */
 

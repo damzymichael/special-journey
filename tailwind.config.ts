@@ -6,7 +6,8 @@ const config: Config = {
     extend: {
       colors: {
         'sub/500': '#525866',
-        'surface/700': '#20232D'
+        'surface/700': '#20232D',
+        'disabled/300': '#CDD0D5'
       }
     }
   },
