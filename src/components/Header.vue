@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import gsap from '@/utils/gsap.config';
 import {ref} from 'vue';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
@@ -10,6 +11,8 @@ import CloseIcon from '@/components/svg/CloseIcon.vue';
 const showMenu = ref(false);
 
 const links: {text: string; link: string}[] = [];
+
+function animateChildren() {}
 </script>
 
 <template>
@@ -46,7 +49,10 @@ const links: {text: string; link: string}[] = [];
     </div>
   </header>
 
-  <Transition>
+  <Transition
+    @enter="gsap.from('.link', {y: -50, opacity: 0, stagger: 0.1})"
+    @before-leave="gsap.to('.link', {y: 50, opacity: 0, stagger: -0.1})"
+  >
     <section
       class="md:hidden fixed bg-white w-screen h-screen z-40 text-black p-4 pt-6"
       v-if="showMenu"
@@ -59,29 +65,29 @@ const links: {text: string; link: string}[] = [];
       </header>
       <main>
         <ul class="text-sub/500 flex flex-col gap-3">
-          <li @click="showMenu = false">
+          <li @click="showMenu = false" class="link">
             <RouterLink to="#">Store front</RouterLink>
           </li>
-          <li @click="showMenu = false">
+          <li @click="showMenu = false" class="link">
             <RouterLink to="#">About us</RouterLink>
           </li>
-          <li @click="showMenu = false">
+          <li @click="showMenu = false" class="link">
             <RouterLink to="#">Connect with us</RouterLink>
           </li>
-          <li @click="showMenu = false">
+          <li @click="showMenu = false" class="link">
             <RouterLink to="#" class="flex gap-1 items-center">
               <UserIcon />
               <span class="font-[300]">Profile</span>
             </RouterLink>
           </li>
-          <li @click="showMenu = false">
+          <li @click="showMenu = false" class="link">
             <RouterLink to="#" class="flex gap-1 items-center">
               <CartIcon />
               <span>Cart</span>
             </RouterLink>
           </li>
 
-          <li class="mt-3" @click="showMenu = false">
+          <li class="link mt-3" @click="showMenu = false">
             <Button>
               <div
                 class="bg-surface/700 flex items-center gap-2 -m-2 py-2 px-3"
@@ -112,6 +118,10 @@ li:nth-child(5) {
 .v-leave-active {
   transition: clip-path 0.5s ease;
   clip-path: circle(150% at 100% 1%);
+}
+
+.v-leave-active {
+  transition-delay: 0.7s;
 }
 
 .v-enter-from,
