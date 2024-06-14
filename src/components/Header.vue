@@ -50,8 +50,8 @@ function animateChildren() {}
   </header>
 
   <Transition
-    @enter="gsap.from('.link', {y: -50, opacity: 0, stagger: 0.1})"
-    @before-leave="gsap.to('.link', {y: 50, opacity: 0, stagger: -0.1})"
+    @enter="gsap.from('.link', {y: -50, opacity: 0, stagger: 0.06})"
+    @before-leave="gsap.to('.link', {y: 50, opacity: 0, stagger: -0.05})"
   >
     <section
       class="md:hidden fixed bg-white w-screen h-screen z-40 text-black p-4 pt-6"
@@ -120,8 +120,9 @@ li:nth-child(5) {
   clip-path: circle(150% at 100% 1%);
 }
 
+/*Ensure all buttons animate out before clipath closes */
 .v-leave-active {
-  transition-delay: 0.7s;
+  transition-delay: 0.3s;
 }
 
 .v-enter-from,
