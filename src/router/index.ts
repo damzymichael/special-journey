@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import LandingPage from '../views/LandingPage.vue';
+import LandingPage from '@/views/LandingPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +8,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: LandingPage
-    },
+    }
     // {
     //   path: '/about',
     //   name: 'about',

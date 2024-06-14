@@ -4,8 +4,8 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #212121;
-  --color-text: red;
+  --sub-500: #525866;
+  --surface-700: #20232d;
 }
 
 @media (prefers-color-scheme: dark) {
