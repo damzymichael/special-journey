@@ -14,7 +14,7 @@ onMounted(() => {
     ease: 'power3.Out',
     stagger: 0.1
   });
-  
+
   //61px height of navigation
   gsap.to('h2 span', {
     scrollTrigger: {
@@ -36,7 +36,7 @@ onMounted(() => {
   <main>
     <!-- Hero section  -->
     <section class="hero h-screen bg-[#313133] flex items-end p-5 sm:p-10 pb-0">
-      <div class="mb-[25vw]">
+      <div class="mb-[25vh]">
         <h2 class="uppercase mb-3 text-3xl sm:text-4xl overflow-x-hidden">
           <!-- <span v-for="text in message" class="block relative">{{ text }}</span> -->
           <span class="block relative">Customize your </span>

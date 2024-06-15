@@ -14,8 +14,9 @@ const links: {text: string; link: string}[] = [];
 </script>
 
 <template>
+  <!-- Add backdrop blur when scrolled  -->
   <header
-    class="fixed z-10 w-full flex items-center gap-5 lg:gap-7 bg-opacity-0 py-3 px-5 sm:px-10"
+    class="fixed backdrop-blur-xl z-10 w-full flex items-center gap-5 lg:gap-7 bg-opacity-0 py-3 px-5 sm:px-10"
   >
     <img src="@/assets/favicon.png" alt="Brand Logo" class="" />
 

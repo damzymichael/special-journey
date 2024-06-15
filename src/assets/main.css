@@ -27,4 +27,5 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
+  scroll-behavior: smooth;
 }
