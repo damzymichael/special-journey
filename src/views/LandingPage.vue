@@ -7,6 +7,11 @@ import SearchIcon from '@/components/svg/SearchIcon.vue';
 
 const message = ['Customize your', 'merch, the way you', 'want it'];
 
+function scrollToTop() {
+  alert('Reload page');
+  window.scrollToTop(0, 0);
+}
+
 onMounted(() => {
   gsap.from('h2 span', {
     opacity: 0,
@@ -21,7 +26,13 @@ onMounted(() => {
       trigger: 'h2 span',
       start: 'top 61px',
       end: 'bottom top',
-      scrub: true
+      scrub: true,
+      onEnter: () => {
+        window.addEventListener('beforeunload', scrollToTop);
+      },
+      onLeave: () => {
+        window.removeEventListener('beforeunload', scrollToTop);
+      }
     },
     immediateRender: false,
     opacity: 0,
@@ -36,7 +47,7 @@ onMounted(() => {
   <main>
     <!-- Hero section  -->
     <section class="hero h-screen bg-[#313133] flex items-end p-5 sm:p-10 pb-0">
-      <div class="mb-[25vh]">
+      <div class="mb-[20vh]">
         <h2 class="uppercase mb-3 text-3xl sm:text-4xl overflow-x-hidden">
           <!-- <span v-for="text in message" class="block relative">{{ text }}</span> -->
           <span class="block relative">Customize your </span>
