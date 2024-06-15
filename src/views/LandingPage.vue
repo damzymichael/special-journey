@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import {onMounted, onUnmounted} from 'vue';
+import {onMounted} from 'vue';
 import gsap from '@/utils/gsap.config';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import SearchIcon from '@/components/svg/SearchIcon.vue';
 
-const message = ['Customize your', 'merch, the way you', 'want it'];
-
 function scrollToTop() {
-  alert('Reload page');
-  window.scrollToTop(0, 0);
+  window.scrollTo(0, 0);
 }
 
 onMounted(() => {
@@ -70,6 +67,8 @@ onMounted(() => {
         </div>
       </div>
     </section>
+
+    <!-- Next Section  -->
     <section class="h-screen bg-[#313133]"></section>
   </main>
 </template>
