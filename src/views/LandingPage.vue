@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted} from 'vue';
+import {onMounted, onUnmounted} from 'vue';
 import gsap from '@/utils/gsap.config';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
@@ -11,7 +11,10 @@ function scrollToTop() {
   // window.scroll({left: 0, top: 0, behavior: 'smooth'})
 }
 
+let ctx: gsap.Context;
 onMounted(() => {
+  window.addEventListener('beforeunload', scrollToTop);
+
   gsap.from('h2 span', {
     opacity: 0,
     left: '-200px',
@@ -21,25 +24,26 @@ onMounted(() => {
   });
 
   //61px height of navigation
-  gsap.to('h2 span', {
-    scrollTrigger: {
-      trigger: 'h2 span',
-      start: 'top 61px',
-      end: 'bottom top',
-      scrub: true,
-      onEnter: () => {
-        window.addEventListener('beforeunload', scrollToTop);
+  ctx = gsap.context(() => {
+    gsap.to('h2 span', {
+      scrollTrigger: {
+        trigger: 'h2 span',
+        start: 'top 61px',
+        end: 'bottom top',
+        scrub: true
       },
-      onLeave: () => {
-        window.removeEventListener('beforeunload', scrollToTop);
-      }
-    },
-    immediateRender: false,
-    opacity: 0,
-    left: '200px',
-    ease: 'power3.Out',
-    stagger: -0.1
+      immediateRender: false,
+      opacity: 0,
+      left: '200px',
+      ease: 'power3.Out',
+      stagger: -0.1
+    });
   });
+});
+
+onUnmounted(() => {
+  ctx.revert();
+  window.removeEventListener('beforeunload', scrollToTop);
 });
 </script>
 
@@ -75,7 +79,7 @@ onMounted(() => {
     <!-- Next Section  -->
     <section class="min-h-screen">
       <!-- flex-container -->
-      <div class="features flex flex-wrap justify-center mt-20">
+      <div class="features mb-20 flex flex-wrap justify-center mt-20">
         <div
           v-for="feature in features"
           class="flex flex-col mb-4 w-10/12 sm:w-2/4 md:w-1/4 py-2 px-2 lg:px-5 gap-2 items-center"
@@ -89,6 +93,22 @@ onMounted(() => {
           </p>
         </div>
       </div>
+
+      <!-- hero 2 -->
+      <div
+        class="hero2 mb-2 min-h-[31rem] sm:min-h-96 p-5 sm:p-10 flex flex-col justify-end items-start"
+      >
+        <h1 class="uppercase text-2xl sm:text-4xl w-full sm:w-3/4 mb-3">
+          Start customizing your <br />
+          own merch now.
+        </h1>
+        <p class="mb-4">
+          We have made the process really easy to use to get your desired merch
+        </p>
+        <Button>
+          <span class="text-sub/500">Get started now</span>
+        </Button>
+      </div>
     </section>
   </main>
 </template>
@@ -101,12 +121,24 @@ section.hero {
   background-position: center;
 }
 
+div.hero2 {
+  background: url('../assets/merch-boy.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 @media screen and (max-width: 640px) {
   section.hero {
     background: url('../assets/girl_small.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+  }
+  div.hero2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 70% center;
   }
 }
 </style>
