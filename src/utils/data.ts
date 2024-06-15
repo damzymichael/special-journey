@@ -29,3 +29,18 @@ export const features = [
       'We make it easy for you to purchase our Pick and Pay or Customizable merch.'
   }
 ];
+
+//Scroll animation for Hero section
+// gsap.to('h2 span', {
+//   scrollTrigger: {
+//     trigger: 'h2 span',
+//     start: 'top 61px',
+//     end: 'bottom top',
+//     scrub: true
+//   },
+//   immediateRender: false,
+//   opacity: 0,
+//   left: '200px',
+//   ease: 'power3.Out',
+//   stagger: -0.1
+// });

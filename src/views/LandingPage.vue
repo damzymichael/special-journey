@@ -26,20 +26,6 @@ onMounted(() => {
       delay: 0.7
     });
 
-    // gsap.to('h2 span', {
-    //   scrollTrigger: {
-    //     trigger: 'h2 span',
-    //     start: 'top 61px',
-    //     end: 'bottom top',
-    //     scrub: true
-    //   },
-    //   immediateRender: false,
-    //   opacity: 0,
-    //   left: '200px',
-    //   ease: 'power3.Out',
-    //   stagger: -0.1
-    // });
-
     //Hero section 2 animation
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -48,7 +34,16 @@ onMounted(() => {
       },
       yoyo: true
     });
-    timeline.from('.hero2', {backgroundSize: '120%'});
+    const mm = gsap.matchMedia();
+
+    mm.add('(min-width: 640px)', () => {
+      timeline.from('.hero2', {backgroundSize: '120%'});
+    });
+
+    mm.add('(max-width: 639px)', () => {
+      timeline.from('.hero2', {backgroundPosition: '65% center'});
+    });
+
     timeline.to('.banner2', {
       opacity: 1,
       left: 0,
@@ -164,7 +159,7 @@ div.hero2 {
   div.hero2 {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 70% center;
+    background-position: 75% center;
   }
 }
 </style>
