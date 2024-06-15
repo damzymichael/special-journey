@@ -7,57 +7,28 @@ import SearchIcon from '@/components/svg/SearchIcon.vue';
 
 const message = ['Customize your', 'merch, the way you', 'want it'];
 
-let ctx;
-
 onMounted(() => {
-  ctx = gsap.context(() => {
-    gsap.from('h2 span', {
-      opacity: 0,
-      left: '-200px',
-      ease: 'power3.Out',
-      stagger: 0.1
-    });
-
-    gsap.to('h2 span', {
-      scrollTrigger: {
-        trigger: 'h2 span',
-        start: 'top 61px',
-        end: 'bottom top',
-        scrub: true
-      },
-      immediateRender: false,
-      opacity: 0,
-      left: '200px',
-      ease: 'power3.Out',
-      stagger: -0.1
-    });
+  gsap.from('h2 span', {
+    opacity: 0,
+    left: '-200px',
+    ease: 'power3.Out',
+    stagger: 0.1
   });
-
-  // gsap.from('h2 span', {
-  //   opacity: 0,
-  //   left: '-200px',
-  //   ease: 'power3.Out',
-  //   stagger: 0.1
-  // });
-
+  
   //61px height of navigation
-  // gsap.to('h2 span', {
-  //   scrollTrigger: {
-  //     trigger: 'h2 span',
-  //     start: 'top 61px',
-  //     end: 'bottom top',
-  //     scrub: true
-  //   },
-  //   immediateRender: false,
-  //   opacity: 0,
-  //   left: '200px',
-  //   ease: 'power3.Out',
-  //   stagger: -0.1
-  // });
-});
-
-onUnmounted(() => {
-  ctx.revert();
+  gsap.to('h2 span', {
+    scrollTrigger: {
+      trigger: 'h2 span',
+      start: 'top 61px',
+      end: 'bottom top',
+      scrub: true
+    },
+    immediateRender: false,
+    opacity: 0,
+    left: '200px',
+    ease: 'power3.Out',
+    stagger: -0.1
+  });
 });
 </script>
 
