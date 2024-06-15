@@ -4,9 +4,11 @@ import gsap from '@/utils/gsap.config';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import SearchIcon from '@/components/svg/SearchIcon.vue';
+import {features} from '@/utils/data';
 
 function scrollToTop() {
   window.scrollTo(0, 0);
+  // window.scroll({left: 0, top: 0, behavior: 'smooth'})
 }
 
 onMounted(() => {
@@ -14,7 +16,8 @@ onMounted(() => {
     opacity: 0,
     left: '-200px',
     ease: 'power3.Out',
-    stagger: 0.1
+    stagger: 0.1,
+    delay: 0.7
   });
 
   //61px height of navigation
@@ -41,12 +44,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
+  <main class="p-5 sm:p-10 pb-0">
     <!-- Hero section  -->
-    <section class="hero h-screen bg-[#313133] flex items-end p-5 sm:p-10 pb-0">
+    <section
+      class="hero h-screen bg-[#313133] -m-5 sm:-m-10 p-5 sm:p-10 pb-0 flex items-end"
+    >
       <div class="mb-[20vh]">
         <h2 class="uppercase mb-3 text-3xl sm:text-4xl overflow-x-hidden">
-          <!-- <span v-for="text in message" class="block relative">{{ text }}</span> -->
           <span class="block relative">Customize your </span>
           <span class="block relative">merch, the way you</span>
           <span class="block relative">want it</span>
@@ -69,7 +73,23 @@ onMounted(() => {
     </section>
 
     <!-- Next Section  -->
-    <section class="h-screen bg-[#313133]"></section>
+    <section class="min-h-screen">
+      <!-- flex-container -->
+      <div class="features flex flex-wrap justify-center mt-20">
+        <div
+          v-for="feature in features"
+          class="flex flex-col mb-4 w-10/12 sm:w-2/4 md:w-1/4 py-2 px-2 lg:px-5 gap-2 items-center"
+        >
+          <div class="border border-soft/200 p-2 rounded-full">
+            <component :is="feature.Icon"></component>
+          </div>
+          <h3 class="text-main/900">{{ feature.title }}</h3>
+          <p class="text-sub/500 text-center text-sm">
+            {{ feature.description }}
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
