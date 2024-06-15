@@ -4,6 +4,7 @@ import gsap from '@/utils/gsap.config';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import SearchIcon from '@/components/svg/SearchIcon.vue';
+import Descriptions from '@/components/Descriptions.vue';
 import {features} from '@/utils/data';
 
 function scrollToTop() {
@@ -14,8 +15,6 @@ function scrollToTop() {
 let ctx: gsap.Context;
 
 onMounted(() => {
-  // window.addEventListener('beforeunload', scrollToTop);
-
   //61px height of navigation
   ctx = gsap.context(() => {
     gsap.from('h2 span', {
@@ -41,7 +40,7 @@ onMounted(() => {
     });
 
     mm.add('(max-width: 639px)', () => {
-      timeline.from('.hero2', {backgroundPosition: '65% center'});
+      timeline.from('.hero2', {backgroundPosition: '70% center'});
     });
 
     timeline.to('.banner2', {
@@ -54,7 +53,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  window.removeEventListener('beforeunload', scrollToTop);
 });
 </script>
 
@@ -92,20 +90,7 @@ onUnmounted(() => {
     <!-- Next Section  -->
     <section class="min-h-screen">
       <!-- flex-container -->
-      <div class="features mb-20 flex flex-wrap justify-center mt-20">
-        <div
-          v-for="feature in features"
-          class="flex flex-col mb-4 w-10/12 sm:w-2/4 md:w-1/4 py-2 px-2 lg:px-5 gap-2 items-center"
-        >
-          <div class="border border-soft/200 p-2 rounded-full">
-            <component :is="feature.Icon"></component>
-          </div>
-          <h3 class="text-main/900">{{ feature.title }}</h3>
-          <p class="text-sub/500 text-center text-sm">
-            {{ feature.description }}
-          </p>
-        </div>
-      </div>
+      <Descriptions :data="features" />
 
       <!-- hero 2 -->
       <div

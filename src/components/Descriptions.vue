@@ -1,0 +1,21 @@
+<script setup lang="ts">
+import type {Description} from '@/utils/data';
+defineProps<{data: Description[]}>();
+</script>
+
+<template>
+  <div class="features mb-20 flex flex-wrap justify-center mt-20">
+    <div
+      v-for="single in data"
+      class="flex flex-col mb-4 w-10/12 sm:w-2/4 md:w-1/4 py-2 px-2 lg:px-5 gap-2 items-center"
+    >
+      <div class="border border-soft/200 p-2 rounded-full">
+        <component :is="single.icon"></component>
+      </div>
+      <h3 class="text-main/900">{{ single.title }}</h3>
+      <p class="text-sub/500 text-center text-sm">
+        {{ single.desc }}
+      </p>
+    </div>
+  </div>
+</template>
