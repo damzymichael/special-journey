@@ -5,7 +5,8 @@ import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import SearchIcon from '@/components/svg/SearchIcon.vue';
 import Descriptions from '@/components/Descriptions.vue';
-import {features} from '@/utils/data';
+import Products from '@/components/Products.vue';
+import {features, steps, products} from '@/utils/data';
 
 function scrollToTop() {
   window.scrollTo(0, 0);
@@ -89,9 +90,7 @@ onUnmounted(() => {
 
     <!-- Next Section  -->
     <section class="min-h-screen">
-      <!-- flex-container -->
       <Descriptions :data="features" />
-
       <!-- hero 2 -->
       <div
         class="hero2 mb-2 min-h-[31rem] sm:min-h-96 p-5 sm:p-10 flex flex-col justify-end items-start"
@@ -109,6 +108,14 @@ onUnmounted(() => {
           </Button>
         </div>
       </div>
+      <Descriptions :data="steps" />
+    </section>
+
+    <section class="products">
+      <h1 class="uppercase text-black font-bold text-center mb-10">
+        YOU CAN ALSO Pick and Pay from our list of Merch
+      </h1>
+      <Products :products="products" />
     </section>
   </main>
 </template>

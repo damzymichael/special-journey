@@ -7,6 +7,8 @@ import UserIcon from '@/components/svg/UserIcon.vue';
 import CartIcon from '@/components/svg/CartIcon.vue';
 import MenuIcon from '@/components/svg/MenuIcon.vue';
 import CloseIcon from '@/components/svg/CloseIcon.vue';
+import Logo from '@/components/svg/Logo.vue';
+import LogoBlack from '@/components/svg/LogoBlack.vue';
 
 const showMenu = ref(false);
 
@@ -19,8 +21,7 @@ const links: {text: string; link: string}[] = [];
   <header
     class="fixed backdrop-blur-lg z-10 w-full flex items-center gap-5 lg:gap-7 bg-opacity-0 py-3 px-5 sm:px-10"
   >
-    <img src="@/assets/favicon.png" alt="Brand Logo" class="" />
-
+    <Logo />
     <nav class="hidden md:flex gap-3 lg:gap-4 text-sm">
       <RouterLink to="#">Store front</RouterLink>
       <RouterLink to="#">About us</RouterLink>
@@ -54,17 +55,17 @@ const links: {text: string; link: string}[] = [];
     @before-leave="gsap.to('.link', {y: 50, opacity: 0, stagger: -0.05})"
   >
     <section
-      class="md:hidden fixed bg-white w-screen h-screen z-40 text-black p-4 pt-6"
+      class="md:hidden fixed bg-white w-screen h-screen z-40 text-black p-5 pt-6"
       v-if="showMenu"
     >
-      <header class="flex items-center justify-between mb-10">
-        <img src="@/assets/logo_black.png" alt="Brand Logo" />
+      <header class="flex items-center justify-between mb-14">
+        <LogoBlack />
         <Button :border="false" @click="showMenu = false">
           <CloseIcon :width="25" :height="25" />
         </Button>
       </header>
       <main>
-        <ul class="text-sub/500 flex flex-col gap-3">
+        <ul class="text-sub/500 text-lg flex flex-col gap-7">
           <li @click="showMenu = false" class="link">
             <RouterLink to="#">Store front</RouterLink>
           </li>
