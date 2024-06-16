@@ -16,7 +16,7 @@ import LogoBlack from '@/components/svg/LogoBlack.vue';
       <a href="#">Twitter</a>
       <a href="#">Dribble</a>
     </nav>
-    <p>
+    <p class="text-center">
       &copy; {{ new Date().getFullYear() }} Powered by Ryvision. All Rights
       Reserved.
     </p>
