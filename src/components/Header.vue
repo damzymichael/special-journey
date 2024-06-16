@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import gsap from '@/utils/gsap.config';
-import {ref, onMounted} from 'vue';
+import {ref, onMounted, onUnmounted} from 'vue';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import UserIcon from '@/components/svg/UserIcon.vue';
@@ -12,20 +12,27 @@ import LogoBlack from '@/components/svg/LogoBlack.vue';
 
 const showMenu = ref(false);
 
+let ctx: gsap.Context;
+
 onMounted(() => {
-  gsap.to('header.fixed', {
-    scrollTrigger: {
-      trigger: '#section2',
-      start: 'top top',
-      endTrigger: 'footer',
-      end: 'bottom 10px',
-      // markers: true,
-      toggleActions: 'play reset play reset'
-    },
-    duration: 0.2,
-    backdropFilter: 'blur(0px)',
-    backgroundColor: 'var(--surface-700)'
+  ctx = gsap.context(() => {
+    gsap.to('header.fixed', {
+      scrollTrigger: {
+        trigger: 'section#section2',
+        start: 'top top',
+        endTrigger: 'footer',
+        end: 'bottom 10px',
+        toggleActions: 'play reset play reset'
+      },
+      duration: 0.2,
+      backdropFilter: 'blur(0px)',
+      backgroundColor: 'var(--surface-700)'
+    });
   });
+});
+
+onUnmounted(() => {
+  ctx.revert();
 });
 
 // const links: {text: string; link: string}[] = [];
@@ -80,7 +87,7 @@ onMounted(() => {
           <CloseIcon :width="25" :height="25" />
         </Button>
       </header>
-      <main>
+      <nav>
         <ul class="text-sub/500 text-lg flex flex-col gap-7">
           <li @click="showMenu = false" class="link">
             <RouterLink to="#">Store front</RouterLink>
@@ -105,17 +112,13 @@ onMounted(() => {
           </li>
 
           <li class="link mt-3" @click="showMenu = false">
-            <Button>
-              <div
-                class="bg-surface/700 flex items-center gap-2 -m-2 py-2 px-3"
-              >
-                <MagicLineIcon />
-                <span class="text-white">Customize my merch</span>
-              </div>
+            <Button bg-color="bg-surface/700">
+              <MagicLineIcon />
+              <span class="text-white">Customize my merch</span>
             </Button>
           </li>
         </ul>
-      </main>
+      </nav>
     </section>
   </Transition>
 </template>

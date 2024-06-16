@@ -73,16 +73,12 @@ onUnmounted(() => {
         </h2>
         <div class="button-group flex gap-2">
           <Button>
-            <div class="flex items-center gap-1">
-              <MagicLineIcon />
-              <span class="text-sub/500">Create your merch</span>
-            </div>
+            <MagicLineIcon />
+            <span class="text-sub/500">Create your merch</span>
           </Button>
-          <Button :border="false">
-            <div class="bg-surface/700 flex items-center gap-2 -m-2 py-2 px-3">
-              <SearchIcon />
-              <span class="text-disabled/300">Pick and pay</span>
-            </div>
+          <Button bg-color="bg-transparent">
+            <SearchIcon />
+            <span class="text-disabled/300">Pick and pay</span>
           </Button>
         </div>
       </div>
@@ -93,7 +89,7 @@ onUnmounted(() => {
       <Descriptions :data="features" />
       <!-- hero 2 -->
       <div
-        class="hero2 mb-2 min-h-[31rem] sm:min-h-96 p-5 sm:p-10 flex flex-col justify-end items-start"
+        class="hero2 mb-5 min-h-[31rem] sm:min-h-96 p-5 sm:p-10 flex flex-col justify-end items-start"
       >
         <h1 class="banner2 uppercase text-2xl sm:text-4xl w-full sm:w-3/4 mb-3">
           Start customizing your <br />
@@ -129,7 +125,7 @@ section.hero {
 }
 
 div.hero2 {
-  background: url('../assets/merch-boy.png');
+  background-image: url('../assets/merch-boy.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -149,6 +145,11 @@ div.hero2 {
     background-position: center;
   }
   div.hero2 {
+    background-image: linear-gradient(
+        rgba(34, 34, 34, 0.6),
+        rgba(34, 34, 34, 0.6)
+      ),
+      url('../assets/merch-boy.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 75% center;
