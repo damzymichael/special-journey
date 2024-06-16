@@ -58,10 +58,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <main class="p-5 sm:p-10 pb-0">
+  <main class="p-5 sm:px-10 sm:py-0">
     <!-- Hero section  -->
     <section
-      class="hero h-screen bg-[#313133] -m-5 sm:-m-10 p-5 sm:p-10 pb-0 flex items-end"
+      class="hero h-screen bg-[#313133] -mx-5 sm:-mx-10 -mt-0 p-5 pt-0 sm:p-10 flex items-end"
     >
       <div class="mb-[20vh]">
         <h2
@@ -89,7 +89,7 @@ onUnmounted(() => {
     </section>
 
     <!-- Next Section  -->
-    <section class="min-h-screen">
+    <section id="section2" class="min-h-screen border">
       <Descriptions :data="features" />
       <!-- hero 2 -->
       <div

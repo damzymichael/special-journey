@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import gsap from '@/utils/gsap.config';
-import {ref} from 'vue';
+import {ref, onMounted} from 'vue';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import UserIcon from '@/components/svg/UserIcon.vue';
@@ -12,14 +12,30 @@ import LogoBlack from '@/components/svg/LogoBlack.vue';
 
 const showMenu = ref(false);
 
-const links: {text: string; link: string}[] = [];
+onMounted(() => {
+  gsap.to('header.fixed', {
+    scrollTrigger: {
+      trigger: '#section2',
+      start: 'top top',
+      endTrigger: 'footer',
+      end: 'bottom 10px',
+      // markers: true,
+      toggleActions: 'play reset play reset'
+    },
+    duration: 0.2,
+    backdropFilter: 'blur(0px)',
+    backgroundColor: 'var(--surface-700)'
+  });
+});
+
+// const links: {text: string; link: string}[] = [];
 //Add backdrop blur when scrolled
 //Add background to header when scroll section 2 comes in place
 </script>
 
 <template>
   <header
-    class="fixed backdrop-blur-lg z-10 w-full flex items-center gap-5 lg:gap-7 bg-opacity-0 py-3 px-5 sm:px-10"
+    class="fixed z-10 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10"
   >
     <Logo />
     <nav class="hidden md:flex gap-3 lg:gap-4 text-sm">
@@ -105,6 +121,11 @@ const links: {text: string; link: string}[] = [];
 </template>
 
 <style scoped>
+header.fixed {
+  backdrop-filter: blur(16px);
+  background-color: rgba(0, 0, 0, 0);
+}
+
 li {
   color: var(--sub-500);
   font-weight: 400;
