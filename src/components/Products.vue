@@ -1,20 +1,21 @@
 <script setup lang="ts">
 import {onMounted} from 'vue';
 import gsap from '@/utils/gsap.config';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import type {Product} from '@/utils/data';
 
 defineProps<{products: Product[]}>();
 
 //Todo Animation not working
 onMounted(() => {
-  gsap.from('.product', {
-    scrollTrigger: {
-      trigger: '.product',
-      start: 'top +300px'
-    },
-    opacity: 0,
-    x: -100,
-    stagger: 0.1
+  gsap.defaults({ease: 'power3'});
+
+  gsap.set('.product', {y: 100, opacity: 0});
+
+  ScrollTrigger.batch('.product', {
+    start: 'top bottom-=100px',
+    onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15}),
+    onLeaveBack: batch => gsap.to(batch, {opacity: 0, y: 100, stagger: 0.1})
   });
 });
 </script>
