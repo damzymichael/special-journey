@@ -6,28 +6,19 @@ import type {Product} from '@/utils/data';
 
 defineProps<{products: Product[]}>();
 
-//Todo Animation not working
 onMounted(() => {
   gsap.defaults({ease: 'power3'});
 
   gsap.set('.product', {y: 100});
 
   ScrollTrigger.batch('.product', {
-    // start: 'top bottom-=100px',
-    start: '20px bottom',
-    end: 'top -=150px',
-    onEnter: batch =>
-      gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
-    onLeave: batch =>
-      gsap.set(batch, {opacity: 0, y: -100, stagger: 0.15, overwrite: true}),
-    onEnterBack: batch =>
-      gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
-    onLeaveBack: batch =>
-      gsap.set(batch, {opacity: 0, y: 100, stagger: 0.1, overwrite: true})
+    start: 'top bottom-=100px',
+    onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15}),
+    onLeaveBack: batch => gsap.to(batch, {opacity: 0, y: 100, stagger: 0.1})
   });
 
   ScrollTrigger.addEventListener('refreshInit', () => {
-    gsap.set('.box', {y: 0});
+    gsap.set('.product', {y: 0});
   });
 });
 </script>
