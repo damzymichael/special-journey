@@ -10,7 +10,7 @@ defineProps<{products: Product[]}>();
 onMounted(() => {
   gsap.defaults({ease: 'power3'});
 
-  gsap.set('.product', {y: 100, opacity: 0});
+  // gsap.set('.product', {y: 100, opacity: 0});
 
   ScrollTrigger.batch('.product', {
     start: 'top bottom-=100px',
@@ -22,7 +22,7 @@ onMounted(() => {
 
 <template>
   <div class="product-container flex gap-1 justify-center flex-wrap mb-10">
-    <figure v-for="product in products" class="product w-[49%] sm:w-[33%] mb-4">
+    <figure v-for="product in products" class="product w-[49%] sm:w-[33%] mb-4 opacity-0 translate-y-[100px]">
       <img :src="product.image" alt="" class="mb-2" />
       <figcaption class="text-main/900">
         <h4>{{ product.name }}</h4>
