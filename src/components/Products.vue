@@ -9,7 +9,7 @@ defineProps<{products: Product[]}>();
 onMounted(() => {
   gsap.defaults({ease: 'power3'});
 
-  gsap.set('.product', {y: 100});
+  gsap.set('.product', {y: 100, opacity: 0});
 
   ScrollTrigger.batch('.product', {
     start: 'top bottom-=100px',
@@ -18,7 +18,7 @@ onMounted(() => {
   });
 
   ScrollTrigger.addEventListener('refreshInit', () => {
-    gsap.set('.product', {y: 0});
+    gsap.set('.product', {y: 0, opacity: 0});
   });
 });
 </script>
