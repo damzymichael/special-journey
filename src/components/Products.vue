@@ -29,7 +29,10 @@ onMounted(() => {
       <img :src="product.image" alt="" class="mb-2" />
       <figcaption class="text-main/900">
         <h4>{{ product.name }}</h4>
-        <div class="flex gap-2 font-thin">
+        <div
+          class="flex gap-2 font-thin"
+          v-if="product.price && product.quantity"
+        >
           <p>${{ product.price.toString() }}</p>
           <p class="text-blue/base">
             {{ product.quantity.toString() }} colors available

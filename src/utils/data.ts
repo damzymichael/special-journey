@@ -6,7 +6,6 @@ import AsteriskIcon from '@/components/svg/AsteriskIcon.vue';
 import CaravanIcon from '@/components/svg/CaravanIcon.vue';
 import CartIcon from '@/components/svg/CartIcon.vue';
 import type {Component} from 'vue';
-
 import roundneck from '@/assets/roundneck.png';
 import v_neck from '@/assets/v-neck.png';
 import sleeveless from '@/assets/sleeveless.png';
@@ -65,9 +64,9 @@ export const steps: Description[] = [
 
 export type Product = {
   name: string;
-  price: number;
-  quantity: number;
-  image: string;
+  price?: number;
+  quantity?: number;
+  image?: string;
 };
 
 export const products: Product[] = [

@@ -42,7 +42,7 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="fixed z-10 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10"
+    class="fixed z-20 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10"
   >
     <Logo />
     <nav class="hidden md:flex gap-3 lg:gap-4 text-sm">
