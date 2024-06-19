@@ -9,7 +9,7 @@ defineProps<{data: Description[]; addBg?: boolean; addHeading?: boolean}>();
   >
     <h1
       v-if="addHeading"
-      class="text-black w-full mt-3 mb-10 font-bold text-lg uppercase text-center"
+      class="text-black w-full mt-3 mb-10 font-bold text-base sm:text-lg uppercase text-center"
     >
       Steps to get your customized merch
     </h1>

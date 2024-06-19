@@ -18,7 +18,7 @@ const categories: Product[] = [
 <template>
   <div class="px-5 sm:px-20">
     <header class="py-6 sm:py-16 mx-auto">
-      <h1 class="text-sub/500 text-center text-xl mt-10">
+      <h1 class="text-sub/500 text-center text-xl mt-14 sm:mt-10">
         Customize your merch
       </h1>
       <h2 class="text-center font-bold text-2xl sm:text-3xl text-main/900">
