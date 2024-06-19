@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import gsap from '@/utils/gsap.config';
-import {ref, onMounted, onUnmounted} from 'vue';
+import {ref, watch} from 'vue';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import UserIcon from '@/components/svg/UserIcon.vue';
@@ -11,6 +11,10 @@ import Logo from '@/components/svg/Logo.vue';
 import LogoBlack from '@/components/svg/LogoBlack.vue';
 
 const showMenu = ref(false);
+
+watch(showMenu, newValue => {
+  document.body.style.overflow = newValue ? 'hidden' : 'auto';
+});
 
 // const links: {text: string; link: string}[] = [];
 </script>
