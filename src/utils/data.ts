@@ -6,13 +6,13 @@ import AsteriskIcon from '@/components/svg/AsteriskIcon.vue';
 import CaravanIcon from '@/components/svg/CaravanIcon.vue';
 import CartIcon from '@/components/svg/CartIcon.vue';
 import type {Component} from 'vue';
-import roundneck from '@/assets/roundneck.png';
-import v_neck from '@/assets/v-neck.png';
-import sleeveless from '@/assets/sleeveless.png';
-import roundneck_2 from '@/assets/roundneck-2.png';
-import t_shirt from '@/assets/t-shirt.png';
-import hoodie from '@/assets/hoodie.png';
-import sweatshirt from '@/assets/sweatshirt.png';
+import roundneck from '@/assets/images/roundneck.png';
+import v_neck from '@/assets/images/v-neck.png';
+import sleeveless from '@/assets/images/sleeveless.png';
+import roundneck_2 from '@/assets/images/roundneck-2.png';
+import t_shirt from '@/assets/images/t-shirt.png';
+import hoodie from '@/assets/images/hoodie.png';
+import sweatshirt from '@/assets/images/sweatshirt.png';
 
 export type Description = {title: string; desc: string; icon: Component};
 

@@ -1,3 +1,8 @@
 <script setup lang="ts"></script>
 
-<template></template>
+<template>
+  <div>
+    <!-- Breadcrumbs -->
+    <header></header>
+  </div>
+</template>

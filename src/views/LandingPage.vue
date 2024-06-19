@@ -58,7 +58,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="px-5 sm:px-10 sm:py-0">
+  <div class="px-5 sm:px-10">
     <!-- Hero section  -->
     <section
       class="hero h-screen bg-[#313133] -mx-5 sm:-mx-10 -mt-0 p-5 pt-0 sm:p-10 flex items-end"
@@ -118,14 +118,14 @@ onUnmounted(() => {
 
 <style scoped>
 section.hero {
-  background: url('../assets/girl.png');
+  background: url('../assets/images/girl.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 div.hero2 {
-  background-image: url('../assets/merch-boy.png');
+  background-image: url('../assets/images/merch-boy.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -139,7 +139,7 @@ div.hero2 {
 
 @media screen and (max-width: 640px) {
   section.hero {
-    background: url('../assets/girl_small.png');
+    background: url('../assets/images/girl_small.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -149,7 +149,7 @@ div.hero2 {
         rgba(34, 34, 34, 0.6),
         rgba(34, 34, 34, 0.6)
       ),
-      url('../assets/merch-boy.png');
+      url('../assets/images/merch-boy.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 75% center;

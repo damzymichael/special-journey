@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import t_shirt from '@/assets/t-shirt.png';
-import roundneck from '@/assets/roundneck.png';
-import sweatshirt from '@/assets/sweatshirt.png';
+import t_shirt from '@/assets/images/t-shirt.png';
+import roundneck from '@/assets/images/roundneck.png';
+import sweatshirt from '@/assets/images/sweatshirt.png';
 import type {Product} from '@/utils/data';
 import Products from '@/components/Products.vue';
 import Descriptions from '@/components/Descriptions.vue';
