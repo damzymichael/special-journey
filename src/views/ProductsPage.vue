@@ -14,12 +14,12 @@ const categories: Product[] = [
 
 <template>
   <div class="px-5">
-    <header class="py-20">
+    <header class="py-16 sm:py-20">
       <h1 class="text-sub/500 text-center text-xl">Customize your merch</h1>
-      <h1 class="text-center font-bold text-3xl text-main/900">
+      <h2 class="text-center font-bold text-2xl sm:text-3xl text-main/900">
         Select the merch you want to <br />
         customize
-      </h1>
+      </h2>
     </header>
     <Products :products="categories" />
   </div>
