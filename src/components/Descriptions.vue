@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import type {Description} from '@/utils/data';
-defineProps<{data: Description[]}>();
+defineProps<{data: Description[]; addBg?: boolean; addHeading?: boolean}>();
 </script>
 
 <template>
-  <div class="features mb-20 flex flex-wrap justify-center mt-20">
+  <div
+    class="features mb-20 flex flex-wrap items-center justify-center mt-20 py-3"
+  >
+    <h1
+      v-if="addHeading"
+      class="text-black w-full mt-3 mb-10 font-bold text-lg uppercase text-center"
+    >
+      Steps to get your customized merch
+    </h1>
     <div
       v-for="single in data"
       class="flex flex-col mb-4 w-10/12 sm:w-2/4 md:w-1/4 py-2 px-2 lg:px-5 gap-2 items-center"

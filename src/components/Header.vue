@@ -12,32 +12,7 @@ import LogoBlack from '@/components/svg/LogoBlack.vue';
 
 const showMenu = ref(false);
 
-let ctx: gsap.Context;
-
-onMounted(() => {
-  ctx = gsap.context(() => {
-    gsap.to('header.fixed', {
-      scrollTrigger: {
-        trigger: 'section#section2',
-        start: 'top top',
-        endTrigger: 'footer',
-        end: 'bottom 10px',
-        toggleActions: 'play reset play reset'
-      },
-      duration: 0.2,
-      backdropFilter: 'blur(0px)',
-      backgroundColor: 'var(--surface-700)'
-    });
-  });
-});
-
-onUnmounted(() => {
-  ctx.revert();
-});
-
 // const links: {text: string; link: string}[] = [];
-//Add backdrop blur when scrolled
-//Add background to header when scroll section 2 comes in place
 </script>
 
 <template>
@@ -126,7 +101,7 @@ onUnmounted(() => {
 <style scoped>
 header.fixed {
   backdrop-filter: blur(16px);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--surface-700);
 }
 
 li {

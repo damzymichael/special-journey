@@ -10,7 +10,8 @@ const config: Config = {
         'disabled/300': '#CDD0D5',
         'soft/200': '#E2E4E9',
         'main/900': '#0A0D14',
-        'blue/base': '#375DFB'
+        'blue/base': '#375DFB',
+        'weak/100': '#F6F8FA'
       }
     }
   },
