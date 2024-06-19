@@ -17,8 +17,10 @@ const categories: Product[] = [
 
 <template>
   <div class="px-5 sm:px-20">
-    <header class="py-16 sm:py-20 mx-auto">
-      <h1 class="text-sub/500 text-center text-xl">Customize your merch</h1>
+    <header class="py-6 sm:py-16 mx-auto">
+      <h1 class="text-sub/500 text-center text-xl mt-10">
+        Customize your merch
+      </h1>
       <h2 class="text-center font-bold text-2xl sm:text-3xl text-main/900">
         Select the merch you want to <br />
         customize
@@ -28,7 +30,6 @@ const categories: Product[] = [
     <section class="bg-weak/100 -mx-5 sm:-mx-20 mb-10">
       <Descriptions :data="steps" :add-heading="true" />
     </section>
-
     <section>
       <h1
         class="text-black w-full mt-3 mb-10 font-bold text-lg uppercase text-center"
