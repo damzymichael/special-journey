@@ -5,7 +5,9 @@ import LogoBlack from '@/components/svg/LogoBlack.vue';
 
 <template>
   <Header />
-  <RouterView />
+  <main class="pt-10">
+    <RouterView />
+  </main>
   <footer
     class="bg-soft/200 py-10 sm:py-14 flex flex-col items-center text-sub/500"
   >

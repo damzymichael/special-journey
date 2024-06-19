@@ -58,7 +58,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <main class="px-5 sm:px-10 sm:py-0">
+  <div class="px-5 sm:px-10 sm:py-0">
     <!-- Hero section  -->
     <section
       class="hero h-screen bg-[#313133] -mx-5 sm:-mx-10 -mt-0 p-5 pt-0 sm:p-10 flex items-end"
@@ -113,7 +113,7 @@ onUnmounted(() => {
       </h1>
       <Products :products="products" />
     </section>
-  </main>
+  </div>
 </template>
 
 <style scoped>
