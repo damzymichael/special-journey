@@ -49,16 +49,16 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
         </li>
       </ul>
     </header>
-    <section class="flex flex-col sm:flex-row gap-3 mb-4">
+    <section class="flex flex-col md:flex-row gap-3 mb-4">
       <!-- Image and variants -->
-      <div class="w-full sm:w-1/2">
+      <div class="w-full md:w-[48%]">
         <img :src="sweatshirt" alt="sweatshirt" />
       </div>
 
       <!-- sizes and color variants  -->
-      <div>
+      <div class="w-full md:w-[48%]">
         <p class="text-main/900 text-lg mb-1">Your size</p>
-        <div class="flex gap-3 mb-8">
+        <div class="flex flex-wrap gap-3 mb-8">
           <span
             v-for="size in sizes"
             class="w-8 h-8 flex items-center justify-center text-xs border border-sub/300 font-thin uppercase text-sub/500 cursor-pointer"
