@@ -109,7 +109,7 @@ onUnmounted(() => {
 
     <section class="products">
       <h1 class="uppercase text-black font-bold text-center mb-10">
-        YOU CAN ALSO Pick and Pay from our list of Merch
+        You can also pick and pay from our list of Merch
       </h1>
       <Products :products="products" />
     </section>

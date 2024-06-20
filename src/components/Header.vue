@@ -25,18 +25,25 @@ watch(showMenu, newValue => {
   >
     <Logo />
     <nav class="hidden md:flex gap-3 lg:gap-4 text-sm">
-      <RouterLink to="#">Store front</RouterLink>
+      <RouterLink to="/">Store front</RouterLink>
       <RouterLink to="#">About us</RouterLink>
       <RouterLink to="#">Conect with us</RouterLink>
     </nav>
 
     <div class="button-group hidden md:flex gap-2 ml-auto">
-      <Button>
+      <RouterLink
+        to="/products"
+        class="inline-flex gap-2 items-center py-2 px-3 bg-white"
+      >
+        <MagicLineIcon />
+        <span class="text-[#525866]">Customize my merch</span>
+      </RouterLink>
+      <!-- <Button>
         <div class="flex items-center gap-1">
           <MagicLineIcon />
           <span>Customize your merch</span>
         </div>
-      </Button>
+      </Button> -->
       <Button>
         <UserIcon />
       </Button>
@@ -69,7 +76,7 @@ watch(showMenu, newValue => {
       <nav>
         <ul class="text-sub/500 text-lg flex flex-col gap-7">
           <li @click="showMenu = false" class="link">
-            <RouterLink to="#">Store front</RouterLink>
+            <RouterLink to="/">Store front</RouterLink>
           </li>
           <li @click="showMenu = false" class="link">
             <RouterLink to="#">About us</RouterLink>
@@ -91,10 +98,13 @@ watch(showMenu, newValue => {
           </li>
 
           <li class="link mt-3" @click="showMenu = false">
-            <Button bg-color="bg-surface/700">
+            <RouterLink
+              to="/products"
+              class="inline-flex gap-2 items-center py-2 px-3 bg-surface/700"
+            >
               <MagicLineIcon />
               <span class="text-white">Customize my merch</span>
-            </Button>
+            </RouterLink>
           </li>
         </ul>
       </nav>

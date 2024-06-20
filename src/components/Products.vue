@@ -24,7 +24,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="product-container flex gap-1 justify-center flex-wrap mb-10">
+  <RouterLink
+    to="/customize"
+    class="product-container flex gap-1 justify-center flex-wrap mb-10"
+  >
     <figure v-for="product in products" class="product w-[49%] sm:w-[33%] mb-4">
       <img :src="product.image" alt="" class="mb-2" />
       <figcaption class="text-main/900">
@@ -40,5 +43,5 @@ onMounted(() => {
         </div>
       </figcaption>
     </figure>
-  </div>
+  </RouterLink>
 </template>

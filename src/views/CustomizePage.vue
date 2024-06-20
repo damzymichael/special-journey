@@ -49,9 +49,9 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
         </li>
       </ul>
     </header>
-    <section class="flex gap-3">
+    <section class="flex flex-col sm:flex-row gap-3 mb-4">
       <!-- Image and variants -->
-      <div class="w-1/2">
+      <div class="w-full sm:w-1/2">
         <img :src="sweatshirt" alt="sweatshirt" />
       </div>
 
@@ -80,16 +80,14 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
             <EclipseIcon :fill="colors[1]" />
           </button>
         </div>
-        <p class="text-main/900 text-lg mb-1">
-          Front side graphics
-        </p>
+        <p class="text-main/900 text-lg mb-1">Front side graphics</p>
         <div class="flex flex-wrap gap-2 mb-8">
           <button class="p-2 border border-sub/300" v-for="icon in icons">
             <component :is="icon" class="w-8 h-8"></component>
           </button>
         </div>
         <Button bg-color="bg-surface/700">
-          <CartIcon class="text-white ml-3" />
+          <CartIcon fill="#fff" class="ml-3" />
           <span class="text-white mr-3">Add to cart</span>
         </Button>
       </div>
