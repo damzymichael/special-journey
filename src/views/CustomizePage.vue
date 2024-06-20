@@ -13,6 +13,7 @@ import HandCoinIcon from '@/components/svg/HandCoinIcon.vue';
 import AnchorIcon from '@/components/svg/AsteriskIcon.vue';
 import SunIcon from '@/components/svg/SunIcon.vue';
 import CartIcon from '@/components/svg/CartIcon.vue';
+import InfoIcon from '@/components/svg/InfoIcon.vue';
 
 const sizes = ['xs', 's', 'm', 'l', 'xl', '2xl', '3xl'];
 const colors = [
@@ -35,12 +36,14 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
       <ul class="flex items-center gap-2 text-xs">
         <li class="flex gap-0.5 items-center">
           <HomeIcon />
-          <RouterLink to="#" class="text-sub/500">Home</RouterLink>
+          <RouterLink to="/" class="text-sub/500">Home</RouterLink>
         </li>
         <ArrowRightIcon />
         <li class="flex gap-1 items-center">
           <AsteriskIcon />
-          <RouterLink to="#" class="text-sub/500">Merch Selection</RouterLink>
+          <RouterLink to="/products" class="text-sub/500"
+            >Merch Selection</RouterLink
+          >
         </li>
         <ArrowRightIcon />
         <li class="flex gap-1 items-center">
@@ -49,6 +52,7 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
         </li>
       </ul>
     </header>
+
     <section class="flex flex-col md:flex-row gap-3 mb-4">
       <!-- Image and variants -->
       <div class="w-full md:w-[48%]">
@@ -57,6 +61,7 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
 
       <!-- sizes and color variants  -->
       <div class="w-full md:w-[48%]">
+        <!-- sizes  -->
         <p class="text-main/900 text-lg mb-1">Your size</p>
         <div class="flex flex-wrap gap-3 mb-8">
           <span
@@ -71,6 +76,8 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
             XL
           </span>
         </div>
+
+        <!-- color  -->
         <p class="text-main/900 text-lg mb-1">Choose a color</p>
         <div class="flex flex-wrap gap-2 mb-8">
           <button v-for="color in colors" class="p-2 border border-sub/300">
@@ -80,6 +87,8 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
             <EclipseIcon :fill="colors[1]" />
           </button>
         </div>
+
+        <!-- front-side graphics  -->
         <p class="text-main/900 text-lg mb-1">Front side graphics</p>
         <div class="flex flex-wrap gap-2 mb-8">
           <button class="p-2 border border-sub/300" v-for="icon in icons">
@@ -92,6 +101,14 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
         </Button>
       </div>
     </section>
+    <aside class="border border-soft/200 mb-3 p-1">
+      <InfoIcon class="inline" />
+      <span class="text-sub/500">
+        Customized knitted products will be delivered within three weeks of
+        order date, and will be shipped separately from any additional items in
+        your order.
+      </span>
+    </aside>
   </div>
 </template>
 
