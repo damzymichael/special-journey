@@ -14,6 +14,8 @@ import AnchorIcon from '@/components/svg/AsteriskIcon.vue';
 import SunIcon from '@/components/svg/SunIcon.vue';
 import CartIcon from '@/components/svg/CartIcon.vue';
 import InfoIcon from '@/components/svg/InfoIcon.vue';
+import AddIcon from '@/components/svg/AddIcon.vue';
+import SubtractIcon from '@/components/svg/SubtractIcon.vue';
 
 const sizes = ['xs', 's', 'm', 'l', 'xl', '2xl', '3xl'];
 const colors = [
@@ -61,6 +63,26 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
 
       <!-- sizes and color variants  -->
       <div class="w-full md:w-[48%]">
+        <!-- Description  -->
+        <article>
+          <h1 class="text-xl text-main/900">
+            Rhapsody Sweat Shirt - <span class="text-sub/500">$10</span>
+          </h1>
+          <div class="text-sub/500">
+            <p>
+              Classic sweat shirt styling with updated little accents to keep
+              things looking current!
+            </p>
+            <p>Not too flashy but still strong enough to make a statement</p>
+            <ul class="list-disc px-4 py-1 marker:text-sub/500 mb-3">
+              <li>Fleece with a soft brushed interior</li>
+              <li>Embroidered Logo on Sleeve</li>
+              <li>Side Seam Pocket with Contrasted Color</li>
+              <li>Marques is wearing a Medium</li>
+            </ul>
+          </div>
+        </article>
+
         <!-- sizes  -->
         <p class="text-main/900 text-lg mb-1">Your size</p>
         <div class="flex flex-wrap gap-3 mb-8">
@@ -95,19 +117,43 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
             <component :is="icon" class="w-8 h-8"></component>
           </button>
         </div>
-        <Button bg-color="bg-surface/700">
-          <CartIcon fill="#fff" class="ml-3" />
-          <span class="text-white mr-3">Add to cart</span>
-        </Button>
+
+        <!-- Quantity and Add to cart button  -->
+        <div class="flex flex-wrap gap-3 mb-3">
+          <div
+            class="flex gap-5 items-center justify-around py-2 border border-soft/200 w-full sm:w-1/3"
+          >
+            <button><SubtractIcon /></button>
+            <span class="text-main/900 text-lg">1</span>
+            <button><AddIcon /></button>
+          </div>
+          <div class="w-full sm:w-max">
+            <Button bg-color="bg-surface/700" full-width>
+              <CartIcon fill="#fff" class="" />
+              <span class="text-white">Add to cart</span>
+            </Button>
+          </div>
+        </div>
+        <div
+          class="border border-soft/200 flex items-center justify-between mb-3 p-2"
+        >
+          <p class="text-main/900">More details</p>
+          <button><AddIcon /></button>
+        </div>
       </div>
     </section>
-    <aside class="border border-soft/200 mb-3 p-1">
-      <InfoIcon class="inline" />
-      <span class="text-sub/500">
-        Customized knitted products will be delivered within three weeks of
-        order date, and will be shipped separately from any additional items in
-        your order.
-      </span>
+    <aside cla>
+      <p>More details</p>
+    </aside>
+    <aside>
+      <div class="border border-soft/200 mb-3 p-1">
+        <InfoIcon class="inline" />
+        <span class="text-sub/500">
+          Customized knitted products will be delivered within three weeks of
+          order date, and will be shipped separately from any additional items
+          in your order.
+        </span>
+      </div>
     </aside>
   </div>
 </template>
