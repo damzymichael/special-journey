@@ -23,7 +23,9 @@ watch(showMenu, newValue => {
   <header
     class="fixed z-20 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10"
   >
-    <Logo />
+    <RouterLink to="/">
+      <Logo />
+    </RouterLink>
     <nav class="hidden md:flex gap-3 lg:gap-4 text-sm">
       <RouterLink to="/">Store front</RouterLink>
       <RouterLink to="#">About us</RouterLink>
