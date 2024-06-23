@@ -142,7 +142,7 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
         </div>
       </div>
     </section>
-    <aside cla>
+    <aside>
       <p>More details</p>
     </aside>
     <aside>

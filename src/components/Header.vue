@@ -9,8 +9,10 @@ import MenuIcon from '@/components/svg/MenuIcon.vue';
 import CloseIcon from '@/components/svg/CloseIcon.vue';
 import Logo from '@/components/svg/Logo.vue';
 import LogoBlack from '@/components/svg/LogoBlack.vue';
+import Cart from '@/components/Cart.vue';
 
 const showMenu = ref(false);
+const showCart = ref(false);
 
 watch(showMenu, newValue => {
   document.body.style.overflow = newValue ? 'hidden' : 'auto';
@@ -20,8 +22,16 @@ watch(showMenu, newValue => {
 </script>
 
 <template>
+  <Transition name="cart" class="">
+    <Cart v-if="showCart" @close-modal="showCart = false" />
+  </Transition>
+  <div
+    @click="showCart = false"
+    class="bg-[#87828259] fixed cursor-pointer top-0 w-screen h-screen z-20 opacity-75"
+    v-if="showCart"
+  />
   <header
-    class="fixed z-20 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10"
+    class="fixed z-10 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10 text-white"
   >
     <RouterLink to="/">
       <Logo />
@@ -40,16 +50,12 @@ watch(showMenu, newValue => {
         <MagicLineIcon />
         <span class="text-[#525866]">Customize my merch</span>
       </RouterLink>
-      <!-- <Button>
-        <div class="flex items-center gap-1">
-          <MagicLineIcon />
-          <span>Customize your merch</span>
-        </div>
-      </Button> -->
+
       <Button>
         <UserIcon />
       </Button>
-      <Button>
+
+      <Button @click="showCart = true">
         <CartIcon />
       </Button>
     </div>
@@ -128,6 +134,16 @@ li {
 li:nth-child(4),
 li:nth-child(5) {
   font-weight: 300;
+}
+
+.cart-enter-active,
+.cart-leave-active {
+  transition: right 0.5s ease;
+}
+
+.cart-enter-from,
+.cart-leave-to {
+  right: -100%;
 }
 
 .v-enter-active,
