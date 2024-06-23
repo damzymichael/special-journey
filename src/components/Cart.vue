@@ -20,7 +20,7 @@ const cartData: Cart[] = [];
 
 <template>
   <div
-    class="fixed right-0 top-0 hidden sm:block sm:w-[70%] md:w-3/5 lg:w-1/2 h-screen bg-white z-30 p-8 border border-l-main/900 text-main/900"
+    class="fixed right-0 top-0 w-full sm:w-[70%] md:w-3/5 lg:w-1/2 h-screen bg-white z-40 p-8 border border-l-main/900 text-main/900"
   >
     <header class="flex items-center gap-3 mb-5">
       <h1 class="text-[#101928] text-xl font-semibold">My Cart</h1>

@@ -8,7 +8,7 @@ defineProps<{data: Description[]; addBg?: boolean; addHeading?: boolean}>();
     class="features mb-20 flex flex-wrap items-center justify-center mt-20 py-3"
   >
     <h1
-      v-if="addHeading"
+      v-show="addHeading"
       class="text-black w-full mt-3 mb-10 font-bold text-base sm:text-lg uppercase text-center"
     >
       Steps to get your customized merch

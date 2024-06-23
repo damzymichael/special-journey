@@ -18,17 +18,22 @@ watch(showMenu, newValue => {
   document.body.style.overflow = newValue ? 'hidden' : 'auto';
 });
 
+const openCart = () => {
+  showMenu.value = false;
+  showCart.value = true;
+};
 // const links: {text: string; link: string}[] = [];
 </script>
 
 <template>
   <Transition name="cart" class="">
-    <Cart v-if="showCart" @close-modal="showCart = false" />
+    <Cart v-show="showCart" @close-modal="showCart = false" />
   </Transition>
+
   <div
     @click="showCart = false"
     class="bg-[#87828259] fixed cursor-pointer top-0 w-screen h-screen z-20 opacity-75"
-    v-if="showCart"
+    v-show="showCart"
   />
   <header
     class="fixed z-10 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10 text-white"
@@ -68,12 +73,12 @@ watch(showMenu, newValue => {
   </header>
 
   <Transition
-    @enter="gsap.from('.link', {y: -50, opacity: 0, stagger: 0.06})"
-    @before-leave="gsap.to('.link', {y: 50, opacity: 0, stagger: -0.05})"
+    @enter="gsap.from('nav ul li', {y: -50, opacity: 0, stagger: 0.06})"
+    @before-leave="gsap.to('nav ul li', {y: 50, opacity: 0, stagger: -0.05})"
   >
     <section
-      class="md:hidden fixed bg-white w-screen h-screen z-40 text-black p-5 pt-6"
-      v-if="showMenu"
+      class="md:hidden fixed bg-white w-screen h-screen z-30 text-black p-5 pt-6"
+      v-show="showMenu"
     >
       <header class="flex items-center justify-between mb-14">
         <LogoBlack />
@@ -83,29 +88,26 @@ watch(showMenu, newValue => {
       </header>
       <nav>
         <ul class="text-sub/500 text-lg flex flex-col gap-7">
-          <li @click="showMenu = false" class="link">
+          <li @click="showMenu = false">
             <RouterLink to="/">Store front</RouterLink>
           </li>
-          <li @click="showMenu = false" class="link">
+          <li @click="showMenu = false">
             <RouterLink to="#">About us</RouterLink>
           </li>
-          <li @click="showMenu = false" class="link">
+          <li @click="showMenu = false">
             <RouterLink to="#">Connect with us</RouterLink>
           </li>
-          <li @click="showMenu = false" class="link">
+          <li @click="showMenu = false">
             <RouterLink to="#" class="flex gap-1 items-center">
               <UserIcon />
               <span>Profile</span>
             </RouterLink>
           </li>
-          <li @click="showMenu = false" class="link">
-            <RouterLink to="#" class="flex gap-1 items-center">
-              <CartIcon />
-              <span>Cart</span>
-            </RouterLink>
+          <li @click="openCart" class="flex gap-1 items-center">
+            <CartIcon />
+            <span>Cart</span>
           </li>
-
-          <li class="link mt-3" @click="showMenu = false">
+          <li class="mt-3" @click="showMenu = false">
             <RouterLink
               to="/products"
               class="inline-flex gap-2 items-center py-2 px-3 bg-surface/700"
@@ -146,6 +148,17 @@ li:nth-child(5) {
   right: -100%;
 }
 
+@media screen and (max-width: 640px) {
+  .cart-enter-active,
+  .cart-leave-active {
+    transition: top 0.5s ease;
+  }
+  .cart-enter-from,
+  .cart-leave-to {
+    top: -100%;
+  }
+}
+
 .v-enter-active,
 .v-leave-active {
   transition: clip-path 0.5s ease;
@@ -156,7 +169,6 @@ li:nth-child(5) {
 .v-leave-active {
   transition-delay: 0.3s;
 }
-
 .v-enter-from,
 .v-leave-to {
   clip-path: circle(0% at 100% 0);
