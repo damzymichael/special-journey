@@ -89,7 +89,7 @@ watch(showMenu, newValue => {
           <li @click="showMenu = false" class="link">
             <RouterLink to="#" class="flex gap-1 items-center">
               <UserIcon />
-              <span class="font-[300]">Profile</span>
+              <span>Profile</span>
             </RouterLink>
           </li>
           <li @click="showMenu = false" class="link">
