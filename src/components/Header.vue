@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import gsap from '@/utils/gsap.config';
-import {ref, watch} from 'vue';
+import {ref, watch, watchEffect} from 'vue';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import UserIcon from '@/components/svg/UserIcon.vue';
@@ -14,9 +14,14 @@ import Cart from '@/components/Cart.vue';
 const showMenu = ref(false);
 const showCart = ref(false);
 
-watch(showMenu, newValue => {
-  document.body.style.overflow = newValue ? 'hidden' : 'auto';
+watchEffect(() => {
+  const modalOpened = showMenu.value || showCart.value;
+  document.body.style.overflow = modalOpened ? 'hidden' : 'auto';
 });
+
+// watch(showMenu, newValue => {
+//   document.body.style.overflow = newValue ? 'hidden' : 'auto';
+// });
 
 const openCart = () => {
   showMenu.value = false;
