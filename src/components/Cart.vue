@@ -6,7 +6,7 @@ import AddIcon from '@/components/svg/AddIcon.vue';
 import SubtractIcon from '@/components/svg/SubtractIcon.vue';
 
 defineEmits(['close-modal']);
-//Todo Close cart when screen is resized
+
 type Cart = {
   productName: string;
   color: string;
@@ -35,9 +35,9 @@ const cartData: Cart[] = [];
         <img
           :src="sweatshirt"
           alt="product-image"
-          class="border border-main/900 w-[27%] min-w-[100px]"
+          class="border border-main/900 w-[27%] min-w-[120px]"
         />
-        <div class="flex-grow">
+        <div class="flex-grow text-sm sm:text-base">
           <div class="flex items-center justify-between mb-2">
             <p class="text-[#101928]">Rhapsody Sweat Shirt</p>
             <p class="w-max">
@@ -53,7 +53,7 @@ const cartData: Cart[] = [];
               class="flex gap-5 items-center justify-around py-1 px-3 border border-soft/200"
             >
               <button><SubtractIcon /></button>
-              <span class="text-main/900 text-lg">1</span>
+              <span class="text-main/900">1</span>
               <button><AddIcon /></button>
             </div>
 
