@@ -121,7 +121,7 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
         <!-- Quantity and Add to cart button  -->
         <div class="flex flex-wrap gap-3 mb-3">
           <div
-            class="flex gap-5 items-center justify-around py-2 border border-soft/200 w-full sm:w-1/3"
+            class="flex gap-5 justify-around py-1 border border-soft/200 w-full sm:w-1/3"
           >
             <button><SubtractIcon /></button>
             <span class="text-main/900 text-lg">1</span>
@@ -129,8 +129,8 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
           </div>
           <div class="w-full sm:w-max">
             <Button bg-color="bg-surface/700" full-width>
-              <CartIcon fill="#fff" class="" />
-              <span class="text-white">Add to cart</span>
+              <CartIcon fill="#fff" class="ml-3" />
+              <span class="text-white mr-3">Add to cart</span>
             </Button>
           </div>
         </div>

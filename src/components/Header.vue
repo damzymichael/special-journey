@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import gsap from '@/utils/gsap.config';
-import {ref, watch, watchEffect} from 'vue';
+import {ref, watchEffect} from 'vue';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import UserIcon from '@/components/svg/UserIcon.vue';
@@ -18,10 +18,6 @@ watchEffect(() => {
   const modalOpened = showMenu.value || showCart.value;
   document.body.style.overflow = modalOpened ? 'hidden' : 'auto';
 });
-
-// watch(showMenu, newValue => {
-//   document.body.style.overflow = newValue ? 'hidden' : 'auto';
-// });
 
 const openCart = () => {
   showMenu.value = false;
@@ -140,46 +136,18 @@ li {
   font-weight: 400;
 }
 
-li:nth-child(4),
-li:nth-child(5) {
-  font-weight: 300;
-}
-
-@media screen and (min-width: 769px) {
-  .cart-enter-active,
-  .cart-leave-active {
-    transition: right 0.5s ease;
-  }
-  .cart-enter-from,
-  .cart-leave-to {
-    right: -100%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .cart-enter-active,
-  .cart-leave-active {
-    transition: top 0.5s ease;
-  }
-  .cart-enter-from,
-  .cart-leave-to {
-    top: -100%;
-  }
-}
-
 .v-enter-active,
 .v-leave-active {
   transition: clip-path 0.5s ease;
   clip-path: circle(150% at 100% 1%);
 }
-
-/*Ensure all buttons animate out before clipath closes */
-.v-leave-active {
-  transition-delay: 0.3s;
-}
 .v-enter-from,
 .v-leave-to {
   clip-path: circle(0% at 100% 0);
+}
+/*Ensure all buttons animate out before clipath closes */
+.v-leave-active {
+  transition-delay: 0.3s;
 }
 
 /* Style active link */

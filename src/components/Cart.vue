@@ -4,6 +4,7 @@ import sweatshirt from '@/assets/images/sweatshirt.png';
 import DeleteIcon from '@/components/svg/DeleteIcon.vue';
 import AddIcon from '@/components/svg/AddIcon.vue';
 import SubtractIcon from '@/components/svg/SubtractIcon.vue';
+import Button from '@/components/ui/Button.vue';
 
 defineEmits(['close-modal']);
 
@@ -20,7 +21,7 @@ const cartData: Cart[] = [];
 
 <template>
   <div
-    class="fixed right-0 top-0 w-full md:w-3/5 lg:w-1/2 h-screen bg-white z-40 p-4 sm:p-8 border border-l-main/900 text-main/900"
+    class="fixed right-0 top-0 w-full md:w-3/5 lg:w-1/2 h-screen bg-white z-40 p-4 sm:p-6 border border-l-main/900 text-main/900"
   >
     <header class="flex items-center gap-3 mb-10">
       <h1 class="text-[#101928] text-xl font-semibold">My Cart</h1>
@@ -30,7 +31,7 @@ const cartData: Cart[] = [];
       </button>
     </header>
 
-    <section>
+    <section class="mb-10">
       <div class="flex gap-2 items-center">
         <img
           :src="sweatshirt"
@@ -56,11 +57,48 @@ const cartData: Cart[] = [];
               <span class="text-main/900">1</span>
               <button><AddIcon /></button>
             </div>
-
             <button><DeleteIcon /></button>
           </div>
         </div>
       </div>
     </section>
+    <div class="flex items-center justify-between mb-3">
+      <p>Subtotal:</p>
+      <p class="w-max">
+        <span class="text-sub/500">$</span>
+        <span>15.</span>
+        <span class="text-sub/500">00</span>
+      </p>
+    </div>
+
+    <hr class="color-[#F0F2F5] h-2 mb-3" />
+
+    <Button full-width bg-color="bg-surface/700">
+      <span class="text-white">Check out</span>
+    </Button>
   </div>
 </template>
+
+<style>
+@media screen and (min-width: 769px) {
+  .cart-enter-active,
+  .cart-leave-active {
+    transition: right 0.5s ease;
+  }
+  .cart-enter-from,
+  .cart-leave-to {
+    right: -100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cart-enter-active,
+  .cart-leave-active {
+    transition: top 0.5s ease;
+  }
+  .cart-enter-from,
+  .cart-leave-to {
+    top: -100%;
+  }
+}
+</style>
