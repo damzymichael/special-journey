@@ -22,11 +22,12 @@ const openCart = () => {
   showMenu.value = false;
   showCart.value = true;
 };
+
 // const links: {text: string; link: string}[] = [];
 </script>
 
 <template>
-  <Transition name="cart" class="">
+  <Transition name="cart">
     <Cart v-show="showCart" @close-modal="showCart = false" />
   </Transition>
 
@@ -75,6 +76,7 @@ const openCart = () => {
   <Transition
     @enter="gsap.from('nav ul li', {y: -50, opacity: 0, stagger: 0.06})"
     @before-leave="gsap.to('nav ul li', {y: 50, opacity: 0, stagger: -0.05})"
+    @after-leave="gsap.to('nav ul li', {y: 0, opacity: 1})"
   >
     <section
       class="md:hidden fixed bg-white w-screen h-screen z-30 text-black p-5 pt-6"
@@ -138,17 +140,18 @@ li:nth-child(5) {
   font-weight: 300;
 }
 
-.cart-enter-active,
-.cart-leave-active {
-  transition: right 0.5s ease;
+@media screen and (min-width: 769px) {
+  .cart-enter-active,
+  .cart-leave-active {
+    transition: right 0.5s ease;
+  }
+  .cart-enter-from,
+  .cart-leave-to {
+    right: -100%;
+  }
 }
 
-.cart-enter-from,
-.cart-leave-to {
-  right: -100%;
-}
-
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   .cart-enter-active,
   .cart-leave-active {
     transition: top 0.5s ease;
