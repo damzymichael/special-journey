@@ -20,9 +20,9 @@ const cartData: Cart[] = [];
 
 <template>
   <div
-    class="fixed right-0 top-0 w-full md:w-3/5 lg:w-1/2 h-screen bg-white z-40 p-8 border border-l-main/900 text-main/900"
+    class="fixed right-0 top-0 w-full md:w-3/5 lg:w-1/2 h-screen bg-white z-40 p-4 sm:p-8 border border-l-main/900 text-main/900"
   >
-    <header class="flex items-center gap-3 mb-5">
+    <header class="flex items-center gap-3 mb-10">
       <h1 class="text-[#101928] text-xl font-semibold">My Cart</h1>
       <p class="bg-blue/base px-2 py-1 rounded-3xl font-[300]">3</p>
       <button class="ml-auto" @click="$emit('close-modal')">
