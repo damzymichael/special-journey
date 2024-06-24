@@ -9,11 +9,11 @@ defineProps<{products: Product[]}>();
 onMounted(() => {
   gsap.defaults({ease: 'power3'});
 
-  // gsap.set('.product', {y: 100, opacity: 0});
+  gsap.set('.product', {y: 100, opacity: 0});
 
   ScrollTrigger.batch('.product', {
     start: 'top bottom-=100px',
-    onEnter: batch => gsap.from(batch, {opacity: 0, y: -100, stagger: 0.15}),
+    onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15}),
     onLeaveBack: batch => gsap.to(batch, {opacity: 0, y: 100, stagger: 0.1})
   });
 
