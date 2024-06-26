@@ -36,7 +36,7 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
   <div class="px-5 sm:px-20">
     <!-- Breadcrumbs -->
     <header class="pt-20 mb-5">
-      <ul class="flex items-center gap-2 text-xs">
+      <ul class="flex items-center gap-1 sm:gap-2 text-xs">
         <li class="flex gap-0.5 items-center">
           <HomeIcon />
           <RouterLink to="/" class="text-sub/500">Home</RouterLink>

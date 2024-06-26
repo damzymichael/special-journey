@@ -4,7 +4,7 @@ defineProps<{label: string; icon?: Component}>();
 </script>
 
 <template>
-  <label class="block mb-4">
+  <label class="block mb-4 flex-grow">
     <span class="block mb-1">{{ label }}</span>
     <div class="flex items-center py-2 px-3 border border-soft/200">
       <input type="text" class="block appearance-none outline-none w-full" />
