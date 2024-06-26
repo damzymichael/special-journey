@@ -18,6 +18,7 @@ import AddIcon from '@/components/svg/AddIcon.vue';
 import SubtractIcon from '@/components/svg/SubtractIcon.vue';
 
 const sizes = ['xs', 's', 'm', 'l', 'xl', '2xl', '3xl'];
+
 const colors = [
   '#F6F8FA',
   '#9C23A9',
@@ -43,9 +44,9 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
         <ArrowRightIcon />
         <li class="flex gap-1 items-center">
           <AsteriskIcon />
-          <RouterLink to="/products" class="text-sub/500"
-            >Merch Selection</RouterLink
-          >
+          <RouterLink to="/products" class="text-sub/500">
+            Merch Selection
+          </RouterLink>
         </li>
         <ArrowRightIcon />
         <li class="flex gap-1 items-center">

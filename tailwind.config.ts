@@ -12,7 +12,8 @@ const config: Config = {
         'main/900': '#0A0D14',
         'blue/base': '#375DFB',
         'weak/100': '#F6F8FA',
-        'sub/300': '#CDD0D5'
+        'sub/300': '#CDD0D5',
+        'grey/200': '#e4e7ec'
       }
     }
   },
