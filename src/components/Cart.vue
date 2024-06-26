@@ -5,9 +5,11 @@ import DeleteIcon from '@/components/svg/DeleteIcon.vue';
 import AddIcon from '@/components/svg/AddIcon.vue';
 import SubtractIcon from '@/components/svg/SubtractIcon.vue';
 import Button from '@/components/ui/Button.vue';
+import {useRouter} from 'vue-router';
 
 defineEmits(['close-modal']);
 
+const router = useRouter();
 type Cart = {
   productName: string;
   color: string;
@@ -25,7 +27,7 @@ const cartData: Cart[] = [];
   >
     <header class="flex items-center gap-3 mb-10">
       <h1 class="text-[#101928] text-xl font-semibold">My Cart</h1>
-      <p class="bg-blue/base px-2 py-1 rounded-3xl font-[300]">3</p>
+      <p class="bg-blue/base px-2 py-1 rounded-3xl font-[300] text-white">3</p>
       <button class="ml-auto" @click="$emit('close-modal')">
         <CloseIcon />
       </button>
@@ -73,7 +75,16 @@ const cartData: Cart[] = [];
 
     <hr class="color-[#F0F2F5] h-2 mb-3" />
 
-    <Button full-width bg-color="bg-surface/700">
+    <Button
+      full-width
+      bg-color="bg-surface/700"
+      @click="
+        () => {
+          $emit('close-modal');
+          router.push('/checkout');
+        }
+      "
+    >
       <span class="text-white">Check out</span>
     </Button>
   </div>
