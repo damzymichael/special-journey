@@ -124,7 +124,9 @@ const paymentMethod = ref('card');
       </section>
       <section
         class="border border-sub/300 p-2 sm:p-4 w-full sm:w-[66%]"
-      ></section>
+      >
+      <h1>Order Summary</h1>
+    </section>
     </main>
   </div>
 </template>
