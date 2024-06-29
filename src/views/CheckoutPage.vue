@@ -122,11 +122,14 @@ const paymentMethod = ref('card');
           <span class="text-white">Pay - $54.00</span>
         </Button>
       </section>
-      <section
-        class="border border-sub/300 p-2 sm:p-4 w-full sm:w-[66%]"
-      >
-      <h1>Order Summary</h1>
-    </section>
+      <section class="border border-sub/300 p-2 sm:p-4 w-full sm:w-[66%]">
+        <header class="flex items-center gap-3 mb-10">
+          <h1 class="text-[#101928] text-xl font-semibold">My Cart</h1>
+          <p class="bg-blue/base px-2 py-1 rounded-3xl font-[300] text-white">
+            3
+          </p>
+        </header>
+      </section>
     </main>
   </div>
 </template>
