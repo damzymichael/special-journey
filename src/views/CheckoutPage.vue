@@ -122,14 +122,43 @@ const paymentMethod = ref('card');
           <span class="text-white">Pay - $54.00</span>
         </Button>
       </section>
-      <section class="border border-sub/300 p-2 sm:p-4 w-full sm:w-[66%]">
-        <header class="flex items-center gap-3 mb-10">
-          <h1 class="text-[#101928] text-xl font-semibold">My Cart</h1>
-          <p class="bg-blue/base px-2 py-1 rounded-3xl font-[300] text-white">
-            3
-          </p>
-        </header>
-      </section>
+      <div class="w-full sm:w-[66%] order-first sm:order-last">
+        <section class="border border-sub/300 p-2 sm:p-4 mb-3">
+          <header class="flex items-center gap-3 mb-8">
+            <h1 class="text-[#101928] text-xl font-semibold">Order Summary</h1>
+            <p class="bg-blue/base px-2 py-1 rounded-3xl font-[300] text-white">
+              3
+            </p>
+          </header>
+          <main>
+            <figure class="flex items-center gap-3 mb-4">
+              <img
+                src="@/assets/images/sweatshirt.png"
+                alt="product image"
+                class="border border-main/900 w-[20%] min-w-[120px]"
+              />
+              <figcaption
+                class="flex flex-col sm:flex-row items-center justify-between flex-grow"
+              >
+                <div class="self-start">
+                  <h4 class="text-lg sm:text-xl font-medium mb-1">
+                    Rhapsody Sweat Shirt
+                  </h4>
+                  <p class="font-light">Color: Black</p>
+                  <p class="font-light">Size: M</p>
+                </div>
+                <p class="font-medium text-xl self-start">$15.00</p>
+              </figcaption>
+            </figure>
+            <hr class="color-[#F0F2F5] h-2 mb-3" />
+          </main>
+        </section>
+        <form class="border border-sub/300 p-2 sm:p-4">
+          <h1 class="text-[#101928] text-xl font-semibold">
+            Delivery Information
+          </h1>
+        </form>
+      </div>
     </main>
   </div>
 </template>
