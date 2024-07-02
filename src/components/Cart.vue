@@ -27,7 +27,7 @@ const cartData: Cart[] = [];
   >
     <header class="flex items-center gap-3 mb-10">
       <h1 class="text-[#101928] text-xl font-semibold">My Cart</h1>
-      <p class="bg-blue/base px-2 py-1 rounded-3xl font-[300] text-white">3</p>
+      <p class="bg-blue/base px-2 py-1 rounded-3xl text-sm text-white">3</p>
       <button class="ml-auto" @click="$emit('close-modal')">
         <CloseIcon />
       </button>
