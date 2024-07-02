@@ -14,7 +14,8 @@ const config: Config = {
         'weak/100': '#F6F8FA',
         'sub/300': '#CDD0D5',
         'grey/200': '#e4e7ec',
-        'state/error': '#DF1C41'
+        'state/error': '#DF1C41',
+        'soft/400': '#868C98'
       },
       background: {
         'blue-gradient':

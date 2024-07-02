@@ -28,101 +28,108 @@ const openCart = () => {
 </script>
 
 <template>
-  <Transition name="cart">
-    <Cart v-show="showCart" @close-modal="showCart = false" />
-  </Transition>
+  <div>
+    <!-- Cart component  -->
+    <Transition name="cart">
+      <Cart v-show="showCart" @close-modal="showCart = false" />
+    </Transition>
 
-  <div
-    @click="showCart = false"
-    class="bg-[#87828259] fixed cursor-pointer top-0 w-screen h-screen z-20 opacity-75"
-    v-show="showCart"
-  />
-  <header
-    class="fixed z-10 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10 text-white"
-  >
-    <RouterLink to="/">
-      <Logo />
-    </RouterLink>
-    <nav class="hidden md:flex gap-3 lg:gap-4 text-sm">
-      <RouterLink to="/">Store front</RouterLink>
-      <RouterLink to="#">About us</RouterLink>
-      <RouterLink to="#">Conect with us</RouterLink>
-    </nav>
+    <!-- Overlay when cart opens  -->
+    <div
+      @click="showCart = false"
+      class="bg-[#87828259] fixed cursor-pointer top-0 w-screen h-screen z-20 opacity-75"
+      v-show="showCart"
+    />
 
-    <div class="button-group hidden md:flex gap-2 ml-auto">
-      <RouterLink
-        to="/products"
-        class="inline-flex gap-2 items-center py-2 px-3 bg-white"
-      >
-        <MagicLineIcon />
-        <span class="text-[#525866]">Customize my merch</span>
-      </RouterLink>
-
-      <Button>
-        <UserIcon />
-      </Button>
-
-      <Button @click="showCart = true">
-        <CartIcon />
-      </Button>
-    </div>
-
-    <div class="md:hidden ml-auto">
-      <Button @click="showMenu = true">
-        <MenuIcon />
-      </Button>
-    </div>
-  </header>
-
-  <Transition
-    @enter="gsap.from('nav ul li', {y: -50, opacity: 0, stagger: 0.06})"
-    @before-leave="gsap.to('nav ul li', {y: 50, opacity: 0, stagger: -0.05})"
-    @after-leave="gsap.to('nav ul li', {y: 0, opacity: 1})"
-  >
-    <section
-      class="md:hidden fixed bg-white w-screen h-screen z-30 text-black p-5 pt-6"
-      v-show="showMenu"
+    <!-- Desktop Navigation  -->
+    <header
+      class="fixed z-10 w-full flex items-center gap-5 lg:gap-7 py-3 px-5 sm:px-10 text-white"
     >
-      <header class="flex items-center justify-between mb-14">
-        <LogoBlack />
-        <Button :border="false" @click="showMenu = false">
-          <CloseIcon :width="25" :height="25" />
-        </Button>
-      </header>
-      <nav>
-        <ul class="text-sub/500 text-lg flex flex-col gap-7">
-          <li @click="showMenu = false">
-            <RouterLink to="/">Store front</RouterLink>
-          </li>
-          <li @click="showMenu = false">
-            <RouterLink to="#">About us</RouterLink>
-          </li>
-          <li @click="showMenu = false">
-            <RouterLink to="#">Connect with us</RouterLink>
-          </li>
-          <li @click="showMenu = false">
-            <RouterLink to="#" class="flex gap-1 items-center">
-              <UserIcon />
-              <span>Profile</span>
-            </RouterLink>
-          </li>
-          <li @click="openCart" class="flex gap-1 items-center">
-            <CartIcon />
-            <span>Cart</span>
-          </li>
-          <li class="mt-3" @click="showMenu = false">
-            <RouterLink
-              to="/products"
-              class="inline-flex gap-2 items-center py-2 px-3 bg-surface/700"
-            >
-              <MagicLineIcon />
-              <span class="text-white">Customize my merch</span>
-            </RouterLink>
-          </li>
-        </ul>
+      <RouterLink to="/">
+        <Logo />
+      </RouterLink>
+      <nav class="hidden md:flex gap-3 lg:gap-4 text-sm">
+        <RouterLink to="/">Store front</RouterLink>
+        <RouterLink to="#">About us</RouterLink>
+        <RouterLink to="#">Conect with us</RouterLink>
       </nav>
-    </section>
-  </Transition>
+
+      <div class="button-group hidden md:flex gap-2 ml-auto">
+        <RouterLink
+          to="/products"
+          class="inline-flex gap-2 items-center py-2 px-3 bg-white"
+        >
+          <MagicLineIcon />
+          <span class="text-[#525866]">Customize my merch</span>
+        </RouterLink>
+
+        <Button>
+          <UserIcon />
+        </Button>
+
+        <Button @click="showCart = true">
+          <CartIcon />
+        </Button>
+      </div>
+
+      <div class="md:hidden ml-auto">
+        <Button @click="showMenu = true">
+          <MenuIcon />
+        </Button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation  -->
+    <Transition
+      @enter="gsap.from('nav ul li', {y: -50, opacity: 0, stagger: 0.06})"
+      @before-leave="gsap.to('nav ul li', {y: 50, opacity: 0, stagger: -0.05})"
+      @after-leave="gsap.to('nav ul li', {y: 0, opacity: 1})"
+    >
+      <section
+        class="md:hidden fixed bg-white w-screen h-screen z-30 text-black p-5 pt-6"
+        v-show="showMenu"
+      >
+        <header class="flex items-center justify-between mb-14">
+          <LogoBlack />
+          <Button :border="false" @click="showMenu = false">
+            <CloseIcon :width="25" :height="25" />
+          </Button>
+        </header>
+        <nav>
+          <ul class="text-sub/500 text-lg flex flex-col gap-7">
+            <li @click="showMenu = false">
+              <RouterLink to="/">Store front</RouterLink>
+            </li>
+            <li @click="showMenu = false">
+              <RouterLink to="#">About us</RouterLink>
+            </li>
+            <li @click="showMenu = false">
+              <RouterLink to="#">Connect with us</RouterLink>
+            </li>
+            <li @click="showMenu = false">
+              <RouterLink to="#" class="flex gap-1 items-center">
+                <UserIcon />
+                <span>Profile</span>
+              </RouterLink>
+            </li>
+            <li @click="openCart" class="flex gap-1 items-center">
+              <CartIcon />
+              <span>Cart</span>
+            </li>
+            <li class="mt-3" @click="showMenu = false">
+              <RouterLink
+                to="/products"
+                class="inline-flex gap-2 items-center py-2 px-3 bg-surface/700"
+              >
+                <MagicLineIcon />
+                <span class="text-white">Customize my merch</span>
+              </RouterLink>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </Transition>
+  </div>
 </template>
 
 <style scoped>

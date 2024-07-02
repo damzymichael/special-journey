@@ -9,6 +9,10 @@ import CardIcon from '@/components/svg/CardIcon.vue';
 import Input from '@/components/ui/Input.vue';
 import CalenderIcon from '@/components/svg/CalenderIcon.vue';
 import Button from '@/components/ui/Button.vue';
+import PenIcon from '@/components/svg/PenIcon.vue';
+import MapIcon from '@/components/svg/MapIcon.vue';
+import PhoneIcon from '@/components/svg/PhoneIcon.vue';
+import EmailIcon from '@/components/svg/EmailIcon.vue';
 
 const discount = ref('');
 
@@ -82,10 +86,10 @@ const paymentMethod = ref('card');
 
         <hr class="my-6" />
 
-        <form action="">
+        <form @submit.prevent="">
           <h1 class="mb-3 text-lg">Enter Card Information</h1>
           <Input label="Card holder's name" />
-          <Input label="Card number" :icon="CardIcon" />
+          <Input label="Card number" :icon="CardIcon"/>
           <div class="flex gap-1">
             <Input label="Expiry date" :icon="CalenderIcon" />
             <Input label="CVV" :icon="CalenderIcon" />
@@ -126,7 +130,7 @@ const paymentMethod = ref('card');
         </Button>
       </section>
       <div class="w-full sm:w-[66%] order-first sm:order-last">
-        <section class="border border-sub/300 p-2 sm:p-4 mb-3">
+        <section class="border border-sub/300 p-3 sm:p-4 mb-3">
           <header class="flex items-center gap-3 mb-4 sm:mb-6">
             <h1 class="text-[#101928] text-xl font-semibold">Order Summary</h1>
             <p class="bg-blue/base px-2 py-1 rounded-3xl text-sm text-white">
@@ -156,7 +160,7 @@ const paymentMethod = ref('card');
             <hr class="color-[#F0F2F5] h-2 mb-3" />
           </main>
         </section>
-        <form class="border border-sub/300 p-2 sm:p-4">
+        <form class="border border-sub/300 p-3 sm:p-4 mb-4" @submit.prevent="">
           <h1 class="text-[#101928] text-xl font-semibold mb-4">
             Delivery Information
           </h1>
@@ -169,7 +173,42 @@ const paymentMethod = ref('card');
             <Input label="Mobile number" add-classes="w-full sm:w-[48%]" />
             <Input label="Email address" add-classes="w-full sm:w-[48%]" />
           </div>
+          <Button full-width bg-color="bg-black">
+            <span class="text-white">Save</span>
+          </Button>
         </form>
+        <section class="p-4 bg-weak/100 -mx-4 sm:mx-0 mb-3">
+          <header class="mb-3 flex items-center justify-between">
+            <h1 class="text-[#101928] text-xl font-semibold">
+              Delivery Information
+            </h1>
+            <button class="flex items-center gap-1">
+              <PenIcon />
+              <span class="text-sub/500">Edit</span>
+            </button>
+          </header>
+          <div>
+            <h1 class="mb-3 text-lg font-medium">Alexandra McPherson</h1>
+            <address class="flex mb-1 items-center gap-2">
+              <MapIcon />
+              <span class="text-sub/500 not-italic text-sm sm:text-base">
+                20386 Donovans Rd, Georgetown, Delaware(DE)
+              </span>
+            </address>
+            <p class="flex mb-1 items-center gap-2">
+              <PhoneIcon />
+              <span class="text-sub/500 text-sm sm:text-base">
+                +1 23455246337
+              </span>
+            </p>
+            <p class="flex mb-1 items-center gap-2">
+              <EmailIcon />
+              <span class="text-sub/500 text-sm sm:text-base">
+                alexandramcpherson@email.com
+              </span>
+            </p>
+          </div>
+        </section>
       </div>
     </main>
   </div>

@@ -3,6 +3,7 @@ import LandingPage from '@/views/LandingPage.vue';
 import ProductsPage from '@/views/ProductsPage.vue';
 import CustomizePage from '@/views/CustomizePage.vue';
 import CheckoutPage from '@/views/CheckoutPage.vue';
+import LoginPage from '@/views/LoginPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,11 @@ const router = createRouter({
       path: '/checkout',
       name: 'Checkout',
       component: CheckoutPage
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: LoginPage
     }
     // {
     //   path: '/about',

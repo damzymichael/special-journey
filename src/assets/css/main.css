@@ -11,7 +11,8 @@
   --main-900: #0a0d14;
   --blue-base: #375dfb;
   --weak-100: #f6f8fa;
-  --state-error: #DF1C41;
+  --state-error: #df1c41;
+  --soft-400: #868c98;
 }
 
 @media (prefers-color-scheme: dark) {
