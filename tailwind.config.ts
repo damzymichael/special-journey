@@ -13,7 +13,12 @@ const config: Config = {
         'blue/base': '#375DFB',
         'weak/100': '#F6F8FA',
         'sub/300': '#CDD0D5',
-        'grey/200': '#e4e7ec'
+        'grey/200': '#e4e7ec',
+        'state/error': '#DF1C41'
+      },
+      background: {
+        'blue-gradient':
+          'radial-gradient(86.07% 185.2% at 8.64% 0%, #ebfaff 0%, #ffffff 77.53%);'
       }
     }
   },

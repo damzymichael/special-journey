@@ -13,10 +13,6 @@ import Button from '@/components/ui/Button.vue';
 const discount = ref('');
 
 const paymentMethod = ref('card');
-
-// watch(discount, current => {
-//   console.log(current);
-// });
 </script>
 
 <template>
@@ -45,7 +41,9 @@ const paymentMethod = ref('card');
         <h2 class="text-2xl mb-4">Payment Information</h2>
         <p class="font-[300] mb-3 text-lg">Apply Discount</p>
         <div
-          class="flex items-start justify-between gap-1 border border-soft/200 mb-3 p-3 text-sm"
+          :class="`${
+            discount == 'discount' && 'radio-checked'
+          } radio flex items-start justify-between gap-1 border border-soft/200 mb-3 p-3 text-sm`"
           @click="discount = discount == 'discount' ? '' : 'discount'"
         >
           <label for="discount">
@@ -101,6 +99,11 @@ const paymentMethod = ref('card');
           <span>$45.00</span>
         </p>
 
+        <p class="flex justify-between mb-2" v-show="discount == 'discount'">
+          <span>Discount</span>
+          <span class="text-state/error">- $19.00</span>
+        </p>
+
         <p class="flex justify-between mb-2">
           <span>Tax(10%)</span>
           <span>$45.00</span>
@@ -124,7 +127,7 @@ const paymentMethod = ref('card');
       </section>
       <div class="w-full sm:w-[66%] order-first sm:order-last">
         <section class="border border-sub/300 p-2 sm:p-4 mb-3">
-          <header class="flex items-center gap-3 mb-8">
+          <header class="flex items-center gap-3 mb-4 sm:mb-6">
             <h1 class="text-[#101928] text-xl font-semibold">Order Summary</h1>
             <p class="bg-blue/base px-2 py-1 rounded-3xl text-sm text-white">
               3
@@ -157,7 +160,15 @@ const paymentMethod = ref('card');
           <h1 class="text-[#101928] text-xl font-semibold mb-4">
             Delivery Information
           </h1>
-          <div></div>
+          <div class="flex gap-2 flex-wrap justify-between">
+            <Input label="First name" add-classes="w-full sm:w-[48%]" />
+            <Input label="Last name" add-classes="w-full sm:w-[48%]" />
+            <Input label="Address" add-classes="w-full" />
+            <Input label="City/Town" add-classes="w-full sm:w-[48%]" />
+            <Input label="Zip code" add-classes="w-full sm:w-[48%]" />
+            <Input label="Mobile number" add-classes="w-full sm:w-[48%]" />
+            <Input label="Email address" add-classes="w-full sm:w-[48%]" />
+          </div>
         </form>
       </div>
     </main>
@@ -169,5 +180,21 @@ input[type='radio'] {
   border: 0px;
   aspect-ratio: 1/1;
   height: 1em;
+}
+
+div.radio {
+  background-image: #fff;
+  transition: background-image 1s ease-in;
+  transform-origin: 0%;
+}
+
+div.radio-checked {
+  background-image: radial-gradient(
+    86.07% 185.2% at 8.64% 0%,
+    #ebfaff 0%,
+    #ffffff 77.53%
+  );
+  transition: background-image 1s ease-in;
+  transform-origin: 0%;
 }
 </style>

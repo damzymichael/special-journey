@@ -11,6 +11,7 @@
   --main-900: #0a0d14;
   --blue-base: #375dfb;
   --weak-100: #f6f8fa;
+  --state-error: #DF1C41;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,5 +35,5 @@ html {
 }
 
 input {
-  caret-color: var(--disabled-300);
+  caret-color: var(--surface-700);
 }
