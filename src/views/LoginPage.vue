@@ -31,7 +31,6 @@ import Input from '@/components/ui/Input.vue';
 
       <form>
         <Input label="Email Address" :icon="EmailIcon" icon-position="begin" />
-
         <label>
           <span></span>
           <div>

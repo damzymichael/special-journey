@@ -61,7 +61,7 @@ onUnmounted(() => {
   <div class="px-5 sm:px-10">
     <!-- Hero section  -->
     <section
-      class="hero h-screen bg-[#313133] -mx-5 sm:-mx-10 -mt-0 p-5 pt-0 sm:p-10 flex items-end"
+      class="hero h-screen sticky top-0 -z-10 bg-[#313133] -mx-5 sm:-mx-10 -mt-0 p-5 pt-0 sm:p-10 flex items-end"
     >
       <div class="mb-[20vh]">
         <h2
@@ -84,35 +84,40 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <!-- Next Section  -->
-    <section id="section2" class="min-h-screen">
-      <Descriptions :data="features" />
-      <!-- hero 2 -->
-      <div
-        class="hero2 mb-5 min-h-[31rem] sm:min-h-96 p-5 sm:p-10 flex flex-col justify-end items-start"
-      >
-        <h1 class="banner2 uppercase text-2xl sm:text-4xl w-full sm:w-3/4 mb-3">
-          Start customizing your <br />
-          own merch now.
-        </h1>
-        <p class="banner2 mb-4">
-          We have made the process really easy to use to get your desired merch
-        </p>
-        <div class="banner2">
-          <Button>
-            <span class="text-sub/500">Get started now</span>
-          </Button>
+    <div class="bg-white -mx-5 sm:-mx-10 px-5">
+      <!-- Next Section  -->
+      <section id="section2" class="min-h-screen">
+        <Descriptions :data="features" />
+        <!-- hero 2 -->
+        <div
+          class="hero2 mb-5 min-h-[31rem] sm:min-h-96 p-5 sm:p-10 flex flex-col justify-end items-start"
+        >
+          <h1
+            class="banner2 uppercase text-2xl sm:text-4xl w-full sm:w-3/4 mb-3"
+          >
+            Start customizing your <br />
+            own merch now.
+          </h1>
+          <p class="banner2 mb-4">
+            We have made the process really easy to use to get your desired
+            merch
+          </p>
+          <div class="banner2">
+            <Button>
+              <span class="text-sub/500">Get started now</span>
+            </Button>
+          </div>
         </div>
-      </div>
-      <Descriptions :data="steps" />
-    </section>
+        <Descriptions :data="steps" />
+      </section>
 
-    <section class="products">
-      <h1 class="uppercase text-black font-bold text-center mb-10">
-        You can also pick and pay from our list of Merch
-      </h1>
-      <Products :products="products" />
-    </section>
+      <section class="products">
+        <h1 class="uppercase text-black font-bold text-center mb-10">
+          You can also pick and pay from our list of Merch
+        </h1>
+        <Products :products="products" />
+      </section>
+    </div>
   </div>
 </template>
 
