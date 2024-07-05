@@ -8,11 +8,6 @@ import Descriptions from '@/components/Descriptions.vue';
 import Products from '@/components/Products.vue';
 import {features, steps, products} from '@/utils/data';
 
-function scrollToTop() {
-  window.scrollTo(0, 0);
-  // window.scroll({left: 0, top: 0, behavior: 'smooth'})
-}
-
 let ctx: gsap.Context;
 
 onMounted(() => {
@@ -34,6 +29,7 @@ onMounted(() => {
       },
       yoyo: true
     });
+
     const mm = gsap.matchMedia();
 
     mm.add('(min-width: 640px)', () => {

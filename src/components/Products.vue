@@ -18,7 +18,7 @@ onMounted(() => {
   });
 
   ScrollTrigger.addEventListener('refreshInit', () => {
-    gsap.set('.product', {y: 0, opacity: 0});
+    gsap.set('.product', {y: 100, opacity: 0});
   });
 });
 </script>
