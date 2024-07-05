@@ -84,7 +84,7 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <div class="bg-white -mx-5 sm:-mx-10 px-5">
+    <div class="bg-white -mx-5 sm:-mx-10 px-5 sm:px-10">
       <!-- Next Section  -->
       <section id="section2" class="min-h-screen">
         <Descriptions :data="features" />
