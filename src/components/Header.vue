@@ -3,11 +3,10 @@ import gsap from '@/utils/gsap.config';
 import {ref, watchEffect} from 'vue';
 import Button from '@/components/ui/Button.vue';
 import MenuIcon from '@/components/svg/MenuIcon.vue';
-import CloseIcon from '@/components/svg/CloseIcon.vue';
 import Logo from '@/components/svg/Logo.vue';
 import LogoBlack from '@/components/svg/LogoBlack.vue';
 import Cart from '@/components/Cart.vue';
-import {UserRound, ShoppingCart, Paintbrush} from 'lucide-vue-next';
+import {UserRound, ShoppingCart, Paintbrush, X} from 'lucide-vue-next';
 
 const showMenu = ref(false);
 const showCart = ref(false);
@@ -90,7 +89,7 @@ const openCart = () => {
         <header class="flex items-center justify-between mb-14">
           <LogoBlack />
           <Button :border="false" @click="showMenu = false">
-            <CloseIcon :width="25" :height="25" />
+            <X color="#525866" />
           </Button>
         </header>
         <nav>

@@ -2,11 +2,10 @@
 import {onMounted, onUnmounted} from 'vue';
 import gsap from '@/utils/gsap.config';
 import Button from '@/components/ui/Button.vue';
-import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import Descriptions from '@/components/Descriptions.vue';
 import Products from '@/components/Products.vue';
 import {features, steps, products} from '@/utils/data';
-import {Search} from 'lucide-vue-next';
+import {Search, Paintbrush} from 'lucide-vue-next';
 
 let ctx: gsap.Context;
 
@@ -69,7 +68,7 @@ onUnmounted(() => {
         </h2>
         <div class="button-group flex gap-2">
           <Button>
-            <MagicLineIcon />
+            <Paintbrush color="#525866" :size="18" />
             <span class="text-sub/500">Create your merch</span>
           </Button>
           <Button bg-color="bg-transparent">

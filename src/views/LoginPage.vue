@@ -2,7 +2,6 @@
 import Logo from '@/components/svg/Logo.vue';
 import AppleIcon from '@/components/svg/AppleIcon.vue';
 import GoogleIcon from '@/components/svg/GoogleIcon.vue';
-import EmailIcon from '@/components/svg/EmailIcon.vue';
 import Input from '@/components/ui/Input.vue';
 import {Mail} from 'lucide-vue-next';
 </script>

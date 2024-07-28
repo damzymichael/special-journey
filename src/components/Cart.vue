@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import CloseIcon from './svg/CloseIcon.vue';
 import sweatshirt from '@/assets/images/sweatshirt.png';
-import DeleteIcon from '@/components/svg/DeleteIcon.vue';
-import AddIcon from '@/components/svg/AddIcon.vue';
-import SubtractIcon from '@/components/svg/SubtractIcon.vue';
 import Button from '@/components/ui/Button.vue';
 import {useRouter} from 'vue-router';
+import {Plus, Minus, X, Trash2} from 'lucide-vue-next';
 
 defineEmits(['close-modal']);
 
 const router = useRouter();
+
 type Cart = {
   productName: string;
   color: string;
@@ -29,7 +27,7 @@ const cartData: Cart[] = [];
       <h1 class="text-[#101928] text-xl font-semibold">My Cart</h1>
       <p class="bg-blue/base px-2 py-1 rounded-3xl text-sm text-white">3</p>
       <button class="ml-auto" @click="$emit('close-modal')">
-        <CloseIcon />
+        <X color="#525866" />
       </button>
     </header>
 
@@ -55,11 +53,11 @@ const cartData: Cart[] = [];
             <div
               class="flex gap-5 items-center justify-around py-1 px-3 border border-soft/200"
             >
-              <button><SubtractIcon /></button>
+              <button><Minus :size="20" color="#525866" /></button>
               <span class="text-main/900">1</span>
-              <button><AddIcon /></button>
+              <button><Plus :size="20" color="#525866" /></button>
             </div>
-            <button><DeleteIcon /></button>
+            <button><Trash2 color="#0A0D14" /></button>
           </div>
         </div>
       </div>
