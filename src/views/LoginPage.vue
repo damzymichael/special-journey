@@ -4,6 +4,7 @@ import AppleIcon from '@/components/svg/AppleIcon.vue';
 import GoogleIcon from '@/components/svg/GoogleIcon.vue';
 import EmailIcon from '@/components/svg/EmailIcon.vue';
 import Input from '@/components/ui/Input.vue';
+import {Mail} from 'lucide-vue-next';
 </script>
 
 <template>
@@ -30,7 +31,7 @@ import Input from '@/components/ui/Input.vue';
       </div>
 
       <form>
-        <Input label="Email Address" :icon="EmailIcon" icon-position="begin" />
+        <Input label="Email Address" :icon="Mail" icon-position="begin" />
         <label>
           <span></span>
           <div>

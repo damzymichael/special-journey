@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import Button from '@/components/ui/Button.vue';
-import HomeIcon from '@/components/svg/HomeIcon.vue';
-import ArrowRightIcon from '@/components/svg/ArrowRightIcon.vue';
 import EclipseIcon from '@/components/svg/EclipseIcon.vue';
-import AsteriskIcon from '@/components/svg/AsteriskIcon.vue';
-import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
 import {RouterLink} from 'vue-router';
 import sweatshirt from '@/assets/images/sweatshirt.png';
 import AlipayIcon from '@/components/svg/AlipayIcon.vue';
@@ -12,10 +8,8 @@ import OreosIcon from '@/components/svg/OreosIcon.vue';
 import HandCoinIcon from '@/components/svg/HandCoinIcon.vue';
 import AnchorIcon from '@/components/svg/AsteriskIcon.vue';
 import SunIcon from '@/components/svg/SunIcon.vue';
-import CartIcon from '@/components/svg/CartIcon.vue';
-import InfoIcon from '@/components/svg/InfoIcon.vue';
-import AddIcon from '@/components/svg/AddIcon.vue';
-import SubtractIcon from '@/components/svg/SubtractIcon.vue';
+import {House, CircleDot, Paintbrush, ChevronRight} from 'lucide-vue-next';
+import {Plus, Minus, ShoppingCart, Info} from 'lucide-vue-next';
 
 const sizes = ['xs', 's', 'm', 'l', 'xl', '2xl', '3xl'];
 
@@ -36,21 +30,21 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
   <div class="px-5 sm:px-20">
     <!-- Breadcrumbs -->
     <header class="pt-20 mb-5">
-      <ul class="flex items-center gap-1 sm:gap-2 text-xs">
-        <li class="flex gap-0.5 items-center">
-          <HomeIcon />
+      <ul class="flex items-center gap-1 text-xs">
+        <li class="flex gap-1 items-center">
+          <House :size="15" color="#525866" />
           <RouterLink to="/" class="text-sub/500">Home</RouterLink>
         </li>
-        <ArrowRightIcon />
+        <ChevronRight :size="15" color="#CDD0D5" />
         <li class="flex gap-1 items-center">
-          <AsteriskIcon />
+          <CircleDot :size="15" color="#525866" />
           <RouterLink to="/products" class="text-sub/500">
             Merch Selection
           </RouterLink>
         </li>
-        <ArrowRightIcon />
+        <ChevronRight :size="15" color="#CDD0D5" />
         <li class="flex gap-1 items-center">
-          <MagicLineIcon />
+          <Paintbrush :size="15" color="#525866" />
           <RouterLink to="#" class="text-sub/500">Customization</RouterLink>
         </li>
       </ul>
@@ -124,13 +118,13 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
           <div
             class="flex gap-5 justify-around py-1 border border-soft/200 w-full sm:w-1/3"
           >
-            <button><SubtractIcon /></button>
+            <button><Minus :size="20" color="#525866" /></button>
             <span class="text-main/900 text-lg">1</span>
-            <button><AddIcon /></button>
+            <button><Plus :size="20" color="#525866" /></button>
           </div>
           <div class="w-full sm:w-max">
             <Button bg-color="bg-surface/700" full-width>
-              <CartIcon fill="#fff" class="ml-3" />
+              <ShoppingCart color="#fff" :size="15" class="ml-3" />
               <span class="text-white mr-3">Add to cart</span>
             </Button>
           </div>
@@ -139,7 +133,7 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
           class="border border-soft/200 flex items-center justify-between mb-3 p-2"
         >
           <p class="text-main/900">More details</p>
-          <button><AddIcon /></button>
+          <button><Plus :size="20" color="#525866" /></button>
         </div>
       </div>
     </section>
@@ -148,7 +142,7 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
     </aside>
     <aside>
       <div class="border border-soft/200 mb-3 p-1">
-        <InfoIcon class="inline" />
+        <Info :size="20" color="#375DFB" class="inline" />
         <span class="text-sub/500">
           Customized knitted products will be delivered within three weeks of
           order date, and will be shipped separately from any additional items

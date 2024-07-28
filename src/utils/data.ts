@@ -1,11 +1,5 @@
-import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
-import SpeedIcon from '@/components/svg/SpeedIcon.vue';
-import PrintIcon from '@/components/svg/PrintIcon.vue';
-import DollarIcon from '@/components/svg/DollarIcon.vue';
-import AsteriskIcon from '@/components/svg/AsteriskIcon.vue';
-import CaravanIcon from '@/components/svg/CaravanIcon.vue';
-import CartIcon from '@/components/svg/CartIcon.vue';
-import type {Component} from 'vue';
+import type {FunctionalComponent} from 'vue';
+import type {LucideProps} from 'lucide-vue-next';
 import roundneck from '@/assets/images/roundneck.png';
 import v_neck from '@/assets/images/v-neck.png';
 import sleeveless from '@/assets/images/sleeveless.png';
@@ -13,27 +7,33 @@ import roundneck_2 from '@/assets/images/roundneck-2.png';
 import t_shirt from '@/assets/images/t-shirt.png';
 import hoodie from '@/assets/images/hoodie.png';
 import sweatshirt from '@/assets/images/sweatshirt.png';
+import {Gauge, Paintbrush, Printer, BadgeDollarSign} from 'lucide-vue-next';
+import {CircleDot, ShoppingCart, Caravan} from 'lucide-vue-next';
 
-export type Description = {title: string; desc: string; icon: Component};
+export type Description = {
+  title: string;
+  desc: string;
+  icon: FunctionalComponent<LucideProps, {}, any, {}>;
+};
 
 export const features: Description[] = [
   {
-    icon: SpeedIcon,
+    icon: Gauge,
     title: 'Fast Delivery',
     desc: 'We deliver the best products as fast as possible between 2 - 4 business days'
   },
   {
-    icon: MagicLineIcon,
+    icon: Paintbrush,
     title: 'Easy Customization',
     desc: 'Customize your merch to your taste from our varying list of selection'
   },
   {
-    icon: PrintIcon,
+    icon: Printer,
     title: 'Sustainable Printing',
     desc: 'We use the best partners and technology to print the merch you desire'
   },
   {
-    icon: DollarIcon,
+    icon: BadgeDollarSign,
     title: 'Affordable product',
     desc: 'We make it easy for you to purchase our Pick and Pay or Customizable merch.'
   }
@@ -41,22 +41,22 @@ export const features: Description[] = [
 
 export const steps: Description[] = [
   {
-    icon: AsteriskIcon,
+    icon: CircleDot,
     title: 'Choose merch type',
     desc: 'We deliver the best products as fast as possible between 2 - 4 business days'
   },
   {
-    icon: MagicLineIcon,
+    icon: Paintbrush,
     title: 'Customize your design',
     desc: 'Customize your merch to your taste from our varying list of selection'
   },
   {
-    icon: CartIcon,
+    icon: ShoppingCart,
     title: 'Proceed to your cart',
     desc: 'We use the best partners and technology to print the merch you desire'
   },
   {
-    icon: CaravanIcon,
+    icon: Caravan,
     title: 'Get your merch',
     desc: 'We make it easy for you to purchase our Pick and Pay or Customizable merch.'
   }

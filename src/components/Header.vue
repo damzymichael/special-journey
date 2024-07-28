@@ -2,14 +2,12 @@
 import gsap from '@/utils/gsap.config';
 import {ref, watchEffect} from 'vue';
 import Button from '@/components/ui/Button.vue';
-import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
-import UserIcon from '@/components/svg/UserIcon.vue';
-import CartIcon from '@/components/svg/CartIcon.vue';
 import MenuIcon from '@/components/svg/MenuIcon.vue';
 import CloseIcon from '@/components/svg/CloseIcon.vue';
 import Logo from '@/components/svg/Logo.vue';
 import LogoBlack from '@/components/svg/LogoBlack.vue';
 import Cart from '@/components/Cart.vue';
+import {UserRound, ShoppingCart, Paintbrush} from 'lucide-vue-next';
 
 const showMenu = ref(false);
 const showCart = ref(false);
@@ -59,16 +57,16 @@ const openCart = () => {
           to="/products"
           class="inline-flex gap-2 items-center py-2 px-3 bg-white"
         >
-          <MagicLineIcon />
+          <Paintbrush :size="20" color="#525866" />
           <span class="text-[#525866]">Customize my merch</span>
         </RouterLink>
 
         <Button>
-          <UserIcon />
+          <UserRound color="#525866" :size="20" />
         </Button>
 
         <Button @click="showCart = true">
-          <CartIcon />
+          <ShoppingCart color="#525866" :size="20" />
         </Button>
       </div>
 
@@ -108,12 +106,12 @@ const openCart = () => {
             </li>
             <li @click="showMenu = false">
               <RouterLink to="#" class="flex gap-1 items-center">
-                <UserIcon />
+                <UserRound color="#525866" :size="20" />
                 <span>Profile</span>
               </RouterLink>
             </li>
             <li @click="openCart" class="flex gap-1 items-center">
-              <CartIcon />
+              <ShoppingCart color="#525866" :size="20" />
               <span>Cart</span>
             </li>
             <li class="mt-3" @click="showMenu = false">
@@ -121,7 +119,7 @@ const openCart = () => {
                 to="/products"
                 class="inline-flex gap-2 items-center py-2 px-3 bg-surface/700"
               >
-                <MagicLineIcon />
+                <Paintbrush :size="20" color="#525866" />
                 <span class="text-white">Customize my merch</span>
               </RouterLink>
             </li>

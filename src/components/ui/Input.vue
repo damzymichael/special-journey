@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type {Component} from 'vue';
-
+import type {FunctionalComponent} from 'vue';
+import type {LucideProps} from 'lucide-vue-next';
+//Re-write this icon render icon in place of component
 type Props = {
   label: string;
-  icon?: Component;
+  icon?: FunctionalComponent<LucideProps, {}, any, {}>;
   iconPosition?: 'begin' | 'end';
   addClasses?: string;
 };

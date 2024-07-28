@@ -13,8 +13,10 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@lucide/lab": "^0.1.2",
     "@studio-freight/lenis": "^1.0.42",
     "gsap": "^3.12.5",
+    "lucide-vue-next": "^0.408.0",
     "radix-vue": "^1.8.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

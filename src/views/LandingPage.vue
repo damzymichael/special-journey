@@ -3,10 +3,10 @@ import {onMounted, onUnmounted} from 'vue';
 import gsap from '@/utils/gsap.config';
 import Button from '@/components/ui/Button.vue';
 import MagicLineIcon from '@/components/svg/MagicLineIcon.vue';
-import SearchIcon from '@/components/svg/SearchIcon.vue';
 import Descriptions from '@/components/Descriptions.vue';
 import Products from '@/components/Products.vue';
 import {features, steps, products} from '@/utils/data';
+import {Search} from 'lucide-vue-next';
 
 let ctx: gsap.Context;
 
@@ -73,7 +73,7 @@ onUnmounted(() => {
             <span class="text-sub/500">Create your merch</span>
           </Button>
           <Button bg-color="bg-transparent">
-            <SearchIcon />
+            <Search color="#CDD0D5" :size="20" />
             <span class="text-disabled/300">Pick and pay</span>
           </Button>
         </div>

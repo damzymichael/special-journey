@@ -18,7 +18,7 @@ defineProps<{data: Description[]; addBg?: boolean; addHeading?: boolean}>();
       class="flex flex-col mb-4 w-10/12 sm:w-2/4 md:w-1/4 py-2 px-2 lg:px-5 gap-2 items-center"
     >
       <div class="border border-soft/200 p-2 rounded-full">
-        <component :is="single.icon"></component>
+        <component :is="single.icon" :size="20" color="#525866"></component>
       </div>
       <h3 class="text-main/900">{{ single.title }}</h3>
       <p class="text-sub/500 text-center text-sm">

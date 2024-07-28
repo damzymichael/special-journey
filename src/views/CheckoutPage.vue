@@ -1,18 +1,10 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import CartIcon from '@/components/svg/CartIcon.vue';
-import HomeIcon from '@/components/svg/HomeIcon.vue';
-import DollarIcon from '@/components/svg/DollarIcon.vue';
-import ArrowRightIcon from '@/components/svg/ArrowRightIcon.vue';
-import LoginCircleIcon from '@/components/svg/LoginCircleIcon.vue';
-import CardIcon from '@/components/svg/CardIcon.vue';
+import {House, ShoppingCart, BadgeDollarSign} from 'lucide-vue-next';
+import {ArrowRightToLine, ChevronRight, CreditCard} from 'lucide-vue-next';
+import {Calendar, PenLine, Map, Phone, Mail} from 'lucide-vue-next';
 import Input from '@/components/ui/Input.vue';
-import CalenderIcon from '@/components/svg/CalenderIcon.vue';
 import Button from '@/components/ui/Button.vue';
-import PenIcon from '@/components/svg/PenIcon.vue';
-import MapIcon from '@/components/svg/MapIcon.vue';
-import PhoneIcon from '@/components/svg/PhoneIcon.vue';
-import EmailIcon from '@/components/svg/EmailIcon.vue';
 
 const discount = ref('');
 
@@ -25,17 +17,17 @@ const paymentMethod = ref('card');
     <header class="pt-20 mb-5">
       <ul class="flex items-center gap-1 sm:gap-2 text-xs">
         <li class="flex gap-0.5 items-center">
-          <HomeIcon />
+          <House :size="15" color="#525866" />
           <RouterLink to="/" class="text-sub/500">Home</RouterLink>
         </li>
-        <ArrowRightIcon />
+        <ChevronRight :size="15" color="#CDD0D5" />
         <li class="flex gap-1 items-center">
-          <CartIcon />
+          <ShoppingCart :size="15" color="#525866" />
           <RouterLink to="/products" class="text-sub/500">Cart</RouterLink>
         </li>
-        <ArrowRightIcon />
+        <ChevronRight :size="15" color="#CDD0D5" />
         <li class="flex gap-1 items-center">
-          <DollarIcon />
+          <BadgeDollarSign :size="15" color="#525866" />
           <RouterLink to="#" class="text-sub/500">Checkout</RouterLink>
         </li>
       </ul>
@@ -66,7 +58,7 @@ const paymentMethod = ref('card');
         </div>
 
         <div class="flex gap-1 items-center">
-          <LoginCircleIcon />
+          <ArrowRightToLine color="#375DFB" :size="15" />
           <p class="text-blue/base">Login to retrieve your points</p>
         </div>
 
@@ -89,10 +81,10 @@ const paymentMethod = ref('card');
         <form @submit.prevent="">
           <h1 class="mb-3 text-lg">Enter Card Information</h1>
           <Input label="Card holder's name" />
-          <Input label="Card number" :icon="CardIcon"/>
+          <Input label="Card number" :icon="CreditCard" />
           <div class="flex gap-1">
-            <Input label="Expiry date" :icon="CalenderIcon" />
-            <Input label="CVV" :icon="CalenderIcon" />
+            <Input label="Expiry date" :icon="Calendar" />
+            <Input label="CVV" :icon="Calendar" />
           </div>
         </form>
 
@@ -183,26 +175,26 @@ const paymentMethod = ref('card');
               Delivery Information
             </h1>
             <button class="flex items-center gap-1">
-              <PenIcon />
+              <PenLine color="#525866" :size="15" />
               <span class="text-sub/500">Edit</span>
             </button>
           </header>
           <div>
             <h1 class="mb-3 text-lg font-medium">Alexandra McPherson</h1>
             <address class="flex mb-1 items-center gap-2">
-              <MapIcon />
+              <Map :size="18" color="#525866" />
               <span class="text-sub/500 not-italic text-sm sm:text-base">
                 20386 Donovans Rd, Georgetown, Delaware(DE)
               </span>
             </address>
             <p class="flex mb-1 items-center gap-2">
-              <PhoneIcon />
+              <Phone :size="18" color="#525866" />
               <span class="text-sub/500 text-sm sm:text-base">
                 +1 23455246337
               </span>
             </p>
             <p class="flex mb-1 items-center gap-2">
-              <EmailIcon />
+              <Mail :size="18" color="#525866" />
               <span class="text-sub/500 text-sm sm:text-base">
                 alexandramcpherson@email.com
               </span>
