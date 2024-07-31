@@ -1,29 +1,24 @@
 <script setup lang="ts">
 import type {FunctionalComponent} from 'vue';
 import type {LucideProps} from 'lucide-vue-next';
-//Re-write this icon render icon in place of component
+
 type Props = {
   label: string;
-  icon?: FunctionalComponent<LucideProps, {}, any, {}>;
-  iconPosition?: 'begin' | 'end';
+  BeginIcon?: FunctionalComponent<LucideProps, {}, any, {}>;
+  EndIcon?: FunctionalComponent<LucideProps, {}, any, {}>;
   addClasses?: string;
 };
 
-withDefaults(defineProps<Props>(), {
-  iconPosition: 'end'
-});
+withDefaults(defineProps<Props>(), {});
 </script>
 
 <template>
   <label :class="`block mb-4 flex-grow ${addClasses ?? addClasses}`">
     <span class="block mb-1">{{ label }}</span>
     <div class="flex items-center gap-1 py-2 px-3 border border-soft/200">
-      <component
-        v-show="icon && iconPosition == 'begin'"
-        :is="icon"
-      ></component>
+      <BeginIcon />
       <input type="text" class="block appearance-none outline-none w-full" />
-      <component v-show="icon && iconPosition == 'end'" :is="icon"></component>
+      <EndIcon />
     </div>
   </label>
 </template>
