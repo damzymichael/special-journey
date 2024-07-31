@@ -107,7 +107,7 @@ const openCart = () => {
               <RouterLink to="#">Connect with us</RouterLink>
             </li>
             <li @click="showMenu = false">
-              <RouterLink to="#" class="flex gap-1 items-center">
+              <RouterLink to="/auth/login" class="flex gap-1 items-center">
                 <UserRound color="#525866" :size="20" />
                 <span>Profile</span>
               </RouterLink>
