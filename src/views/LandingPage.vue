@@ -98,7 +98,7 @@ onUnmounted(() => {
             merch
           </p>
           <div class="banner2">
-            <Button>
+            <Button @click="$router.push('/products')">
               <span class="text-sub/500">Get started now</span>
             </Button>
           </div>

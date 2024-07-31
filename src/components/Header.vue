@@ -60,9 +60,12 @@ const openCart = () => {
           <span class="text-[#525866]">Customize my merch</span>
         </RouterLink>
 
-        <Button>
+        <RouterLink
+          to="/auth/login"
+          class="inline-flex gap-2 items-center py-2 px-3 bg-white"
+        >
           <UserRound color="#525866" :size="20" />
-        </Button>
+        </RouterLink>
 
         <Button @click="showCart = true">
           <ShoppingCart color="#525866" :size="20" />
