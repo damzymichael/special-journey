@@ -152,9 +152,3 @@ const icons = [AlipayIcon, OreosIcon, HandCoinIcon, AnchorIcon, SunIcon];
     </aside>
   </div>
 </template>
-
-<style scoped>
-/* img {
-  filter: opacity(0.5) drop-shadow(0 0 0 blue);
-} */
-</style>

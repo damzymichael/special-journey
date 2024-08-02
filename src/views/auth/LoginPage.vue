@@ -53,7 +53,7 @@ import {CircleAlert} from 'lucide-vue-next';
     </section>
     <div class="flex items-center justify-center">
       <RouterLink
-        to="auth/signup"
+        to="/auth/signup"
         class="flex items-center text-office/brown50 text-sm bg-surface/700 py-3 px-5 rounded-full"
       >
         <span>Don't have an account? Sign up</span>
